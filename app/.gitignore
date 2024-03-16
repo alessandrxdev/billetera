@@ -1,3 +1,5 @@
 /build
 /release
-/com/arr/bancamovil/utils/backups/
+/backups
+.backups
+utils/backups/

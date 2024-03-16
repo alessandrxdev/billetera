@@ -43,6 +43,9 @@ captures/
 preferences/
 apklis/
 
+/backups
+.backups
+utils/backups/
 
 # IntelliJ
 *.iml

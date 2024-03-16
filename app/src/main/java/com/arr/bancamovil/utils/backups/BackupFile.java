@@ -27,6 +27,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class BackupFile {
 
     private final Context mContext;
+    private Activity a;
 
     public BackupFile(Context context) {
         this.mContext = context;
