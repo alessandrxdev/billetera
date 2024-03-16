@@ -12,3 +12,4 @@ formal e informal, entre otras opciones.
 - [x] Copias de seguridad cifradas.
 
 ### Agradecimientos.
+[Exchange Rate API]("https://exchange-rate.decubba.com")
