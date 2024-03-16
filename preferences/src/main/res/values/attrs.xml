@@ -1,7 +1,0 @@
-<resources>
-
-    <declare-styleable name="AddPremium">
-        <attr name="addText" format="string" />
-    </declare-styleable>
-    
-</resources>
