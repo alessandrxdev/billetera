@@ -22,15 +22,14 @@ formal e informal, entre otras opciones.
 Para compilar el proyecto debe crear preferences por usted mismo, así como un método para las copias de seguridad. 
 
 ## Prohibiciones 
-- No está permitido crear una aplicación a semejanza de la original, usar nombres o logos que tengan que ver con Billetera.
+A continuación se presentan los requisitos para hacer uso del código fuente de Billetera:
 
-- No está permitido el uso comercial de la aplicación exceptuando las funciones nuevas que se le incorporen y no sean de propiedad intelectual de el creador original de Billetera.
+1. No se permite crear una aplicación que sea similar a la aplicación original, ni utilizar nombres o logotipos relacionados con "Billetera".
 
-- No se debe bajo ningún concepto usar el nombre de Billetera o de su creador para divulgar/promocionar otros proyectos. Exceptuando aquellos que tengan una previa autorización de el creador intelectual de Billetera.
+2. No se permite el uso comercial de la aplicación, a menos que se agreguen nuevas funciones que no sean propiedad intelectual del creador original de "Billetera".
 
-- Es obligatorio hacer referencia a otras librerías usadas en el proyecto como Exchange Rate API entre otras. También se debe reconocer al creador original de la aplicación.
+3. No está permitido utilizar el nombre de "Billetera" o el nombre del creador para promocionar o divulgar otros proyectos, a menos que se cuente con la autorización previa del creador intelectual de "Billetera".
 
-- En caso de que se incumplan algunos de estos requisitos se tomarán medidas legales.
-Los mismos pueden estar sujetos a cambios, en ese caso no es necesario notificarlo para que surja efecto, usted debe estar al tanto de los cambios.
+4. Es obligatorio hacer referencia a las bibliotecas utilizadas en el proyecto, como "Exchange Rate API" y otras. También se debe reconocer al creador original de la aplicación.
 
-
+5. En caso de incumplimiento de alguno de estos requisitos, se tomarán medidas legales. Estos requisitos pueden estar sujetos a cambios, y no es necesario notificarlos para que entren en vigencia. Es responsabilidad del desarrollador estar al tanto de los cambios.
