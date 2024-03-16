@@ -30,6 +30,7 @@ Para compilar el proyecto debe crear preferences por usted mismo, así como un m
 
 - Es obligatorio hacer referencia a otras librerías usadas en el proyecto como Exchange Rate API entre otras. También se debe reconocer al creador original de la aplicación.
 
-- En caso de que se incumplan algunos de estos requisitos se tomarán medidas, los mismos pueden estar sujetos a cambios, en ese caso no es necesario notificarlo para que surja efecto, usted debe estar al tanto de los cambios.
+- En caso de que se incumplan algunos de estos requisitos se tomarán medidas legales.
+Los mismos pueden estar sujetos a cambios, en ese caso no es necesario notificarlo para que surja efecto, usted debe estar al tanto de los cambios.
 
 
