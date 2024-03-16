@@ -46,6 +46,7 @@ apklis/
 /backups
 .backups
 utils/backups/
+app/src/main/java/com/arr/bancamovil/utils/backups/
 
 # IntelliJ
 *.iml
