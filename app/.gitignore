@@ -1,5 +1,7 @@
 /build
 /release
-/backups
-.backups
-utils/backups/
+src/main/java/com/arr/bancamovil/utils/backups/BackupFile.java
+src/main/java/com/arr/bancamovil/utils/backups/ExportFile.java
+src/main/java/com/arr/bancamovil/utils/backups/FileExport.java
+
+
