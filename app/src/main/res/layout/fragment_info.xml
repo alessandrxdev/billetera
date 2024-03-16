@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center_horizontal"
+         android:orientation="vertical"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="20dp"
+         android:layout_alignParentTop="true"
+         android:id="@+id/content_qr">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center_horizontal"
+             android:padding="10dp"
+             android:orientation="vertical"
+             tools:ignore="UselessParent">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal"
+                 android:textAppearance="?textAppearanceBodyLarge"
+                 android:id="@+id/text_moneda"
+                 android:textStyle="bold" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal"
+                 android:textAppearance="?textAppearanceBodyLarge"
+                 android:typeface="monospace"
+                 android:id="@+id/text_tarjeta" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal"
+                 android:textAppearance="?textAppearanceBodySmall"
+                 android:layout_marginTop="10dp"
+                 android:id="@+id/text_titular"
+                 android:text="" />
+
+            <androidx.cardview.widget.CardView
+                 android:layout_height="wrap_content"
+                 android:layout_width="230sp"
+                 app:cardElevation="1dp"
+                 app:cardBackgroundColor="#FFF"
+                 android:layout_marginTop="30dp"
+                 app:cardCornerRadius="30dp">
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:gravity="center"
+                     android:layout_margin="10dp"
+                     android:orientation="vertical">
+
+                    <ImageView
+                         android:layout_height="150dp"
+                         android:layout_width="150dp"
+                         android:contentDescription="@string/content_description_codigo_qr"
+                         android:id="@+id/code_qr" />
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:orientation="horizontal"
+                         android:layout_marginTop="20dp">
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="match_parent"
+                             android:gravity="center_horizontal"
+                             android:textAppearance="?textAppearanceBodySmall"
+                             android:textColor="@android:color/black"
+                             android:layout_weight="1"
+                             android:id="@+id/text_bank"
+                             android:text="" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="match_parent"
+                             android:gravity="center_horizontal"
+                             android:textAppearance="?textAppearanceBodySmall"
+                             android:textColor="@android:color/black"
+                             android:layout_weight="1"
+                             android:id="@+id/text_vence"
+                             android:text="" />
+
+                    </LinearLayout>
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center_horizontal"
+                         android:textAppearance="?textAppearanceBodyMedium"
+                         android:textColor="@android:color/black"
+                         android:layout_marginTop="6dp"
+                         android:text="@string/text_scanner_to_tm" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:visibility="gone"
+         android:layout_centerHorizontal="true"
+         app:iconTint="@color/colorOnSurface"
+         android:textColor="@color/colorOnSurface"
+         app:iconPadding="6dp"
+         android:layout_marginTop="20dp"
+         app:icon="@drawable/ic_list_transactions_24px"
+         android:layout_below="@+id/content_qr"
+         style="@style/Widget.Material3.Button.TextButton"
+         android:id="@+id/transactions"
+         android:text="@string/historial_transacciones"
+         app:iconGravity="textStart" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="16dp"
+         android:background="@color/colorBackground"
+         android:gravity="center_horizontal"
+         android:padding="5dp"
+         android:orientation="horizontal"
+         android:baselineAligned="false"
+         android:layout_alignParentBottom="true">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:layout_weight="1.0">
+
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_height="50dp"
+                 android:layout_width="50dp"
+                 android:clickable="true"
+                 android:layout_margin="10dp"
+                 app:strokeWidth="0dp"
+                 app:cardBackgroundColor="@color/colorSecondaryContainer"
+                 app:cardCornerRadius="30dp"
+                 android:focusable="true"
+                 android:id="@+id/edit">
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:gravity="center">
+
+                    <ImageView
+                         android:layout_height="20dp"
+                         android:layout_width="20dp"
+                         android:contentDescription="@string/content_description_editar_tarjeta"
+                         android:src="@drawable/ic_edit" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal"
+                 android:textAppearance="?textAppearanceBodySmall"
+                 android:singleLine="true"
+                 android:text="@string/text_edit" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:layout_weight="1.0">
+
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_height="50dp"
+                 android:layout_width="50dp"
+                 android:clickable="true"
+                 android:layout_margin="10dp"
+                 app:strokeWidth="0dp"
+                 app:cardBackgroundColor="@color/colorSecondaryContainer"
+                 app:cardCornerRadius="30dp"
+                 android:focusable="true"
+                 android:id="@+id/delete">
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:gravity="center">
+
+                    <ImageView
+                         android:layout_height="20dp"
+                         android:layout_width="20dp"
+                         android:contentDescription="@string/content_description_eliminar_tarjeta"
+                         android:src="@drawable/ic_delete" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal"
+                 android:textAppearance="?textAppearanceBodySmall"
+                 android:singleLine="true"
+                 android:text="@string/text_delete" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:layout_weight="1.0">
+
+            <com.google.android.material.card.MaterialCardView
+                 android:layout_height="50dp"
+                 android:layout_width="50dp"
+                 android:clickable="true"
+                 android:layout_margin="10dp"
+                 app:strokeWidth="0dp"
+                 app:cardBackgroundColor="@color/colorSecondaryContainer"
+                 app:cardCornerRadius="30dp"
+                 android:focusable="true"
+                 android:id="@+id/share">
+
+                <ImageView
+                     android:layout_height="20dp"
+                     android:layout_width="20dp"
+                     android:scaleType="centerInside"
+                     android:contentDescription="@string/content_description_compartir"
+                     android:src="@drawable/ic_share"
+                     android:layout_gravity="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_horizontal"
+                 android:textAppearance="?textAppearanceBodySmall"
+                 android:singleLine="true"
+                 android:text="@string/text_share" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

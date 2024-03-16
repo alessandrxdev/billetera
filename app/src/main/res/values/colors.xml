@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#086972</color>
+    <color name="colorOnPrimary">#000</color>
+    <color name="colorPrimaryContainer">#086972</color>
+    <color name="colorOnPrimaryContainer">#062100</color>
+
+    <!-- secondary -->
+    <color name="colorSecondary">#55624C</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSecondaryContainer">#D0D0D0</color> <!-- item selected color -->
+    <color name="colorOnSecondaryContainer">#086972</color> <!-- color icon select bottom navBar -->
+
+
+    <color name="colorTertiary">#416277</color>
+    <color name="colorOnTertiary">#FFFFFF</color>
+    <color name="colorTertiaryContainer">#C5E7FF</color>
+    <color name="colorOnTertiaryContainer">#001E2D</color>
+
+    <color name="colorError">#BA1A1A</color>
+    <color name="colorErrorContainer">#FFDAD6</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorOnErrorContainer">#410002</color>
+
+    <color name="colorBackground">#FFF</color> <!-- color navBar -->
+    <color name="colorOnBackground">#191C1B</color>
+
+    <color name="colorSurface">#F0F0F0</color> <!-- background -->
+    <color name="colorOnSurface">#191C1B</color>
+    <color name="colorSurfaceVariant">#DFE4D7</color> <!-- background textInputLayout -->
+    <color name="colorOnSurfaceVariant">#000</color> <!-- color inactive icon bottom navBar -->
+    <color name="colorSurfaceContainerHighest">#DFE4D7</color>
+
+
+    <color name="colorOutline">#6F7975</color>
+    <color name="colorOnSurfaceInverse">#EFF1EE</color>
+    <color name="colorSurfaceInverse">#2E312F</color>
+    <color name="colorPrimaryInverse">#5EDBBB</color>
+    <color name="colorSurfaceTint">#006B57</color>
+    <color name="colorOutlineVariant">#BFC9C4</color>
+
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+
+    <!-- pref color theme -->
+    <color name="pref_color_category">#BEBEBE</color>
+    <color name="pref_color_icon">#000</color>
+    <color name="btn_menu_bg">#EEEEEE</color>
+
+    <!-- color category -->
+    <color name="color_transporte">#42A5F5</color>
+    <color name="color_alimentos">#7E57C2</color>
+    <color name="color_factura">#26A69A</color>
+    <color name="color_ocio">#AB47BC</color>
+    <color name="color_ropa">#FFCA28</color>
+    <color name="color_belleza">#EC407A</color>
+    <color name="color_oters">#9E9E9E</color>
+
+
+    <color name="color_recive">#000</color>
+
+    <color name="send">#EF9A9A</color>
+    <color name="recive">#A5D6A7</color>
+
+</resources>

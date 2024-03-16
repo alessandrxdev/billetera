@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="16dp">
+
+    <ImageButton
+        android:layout_height="48dp"
+        android:layout_width="48dp"
+        android:contentDescription="@string/eliminar_content_description"
+        android:src="@drawable/ic_close"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_margin="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/close" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/close"
+        android:gravity="center_horizontal"
+        android:textAppearance="?textAppearanceBodySmall"
+        android:layout_marginTop="30dp"
+        android:id="@+id/intro"
+        android:text="@string/donate" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/intro"
+        android:gravity="center_horizontal"
+        android:textAppearance="?textAppearanceHeadlineMedium"
+        android:layout_marginTop="30dp"
+        android:id="@+id/text"
+        android:text="Donar" />
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/text"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:id="@+id/content1">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/caffe"
+            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:src="@drawable/ic_coffe" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceBodyLarge"
+                    android:layout_marginTop="6dp"
+                    android:text="Un Café" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceBodySmall"
+                    android:text="50.00 CUP" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pizza"
+            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:src="@drawable/ic_pizza" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceBodyLarge"
+                    android:layout_marginTop="6dp"
+                    android:text="Una Pizza" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceBodySmall"
+                    android:layout_marginTop="6dp"
+                    android:text="120 CUP" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

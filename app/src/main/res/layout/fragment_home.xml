@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:orientation="vertical"
+     android:id="@+id/root_home"
+     tools:context=".ui.home.HomeFragment">
+
+    <FrameLayout
+         android:layout_height="220dp"
+         android:layout_width="match_parent"
+         android:paddingBottom="6dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:id="@+id/viewpager_main" />
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             app:selectedDotColor="@color/colorPrimaryContainer"
+             app:dotsSpacing="4dp"
+             app:dotsColor="@color/colorPrimary"
+             app:dotsCornerRadius="8dp"
+             app:dotsSize="10dp"
+             app:progressMode="true"
+             app:dotsWidthFactor="2.5"
+             android:id="@+id/dotsViewPager"
+             android:layout_gravity="center_horizontal|bottom" />
+
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:scrollbars="none"
+         android:scrollIndicators="none">
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:orientation="vertical">
+
+            <include
+                 layout="@layout/content_home_buttons"
+                 android:id="@+id/buttons" />
+
+            <RelativeLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:layout_marginLeft="16dp"
+                 android:layout_marginRight="16dp">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textAppearance="?textAppearanceBodyLarge"
+                     tools:ignore="RelativeOverlap"
+                     android:text="@string/title_tasas_de_cambio" />
+
+                <ImageView
+                     android:layout_height="18dp"
+                     android:layout_width="18dp"
+                     android:src="@drawable/ic_about_24px"
+                     android:importantForAccessibility="no"
+                     android:layout_alignParentEnd="true"
+                     android:id="@+id/about_tasaa" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:visibility="gone"
+                 android:scrollbars="none"
+                 android:paddingBottom="80dp"
+                 android:layout_marginLeft="16dp"
+                 android:layout_marginRight="16dp"
+                 android:layout_marginTop="10dp"
+                 android:id="@+id/recycler" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_marginEnd="16dp"
+                 android:orientation="vertical"
+                 android:layout_marginTop="10dp"
+                 android:id="@+id/shimmer">
+
+                <LinearLayout
+                     android:layout_height="match_parent"
+                     android:layout_width="match_parent"
+                     android:padding="6dp"
+                     android:orientation="vertical">
+
+                    <include
+                         layout="@layout/layout_load_tasas_animation" />
+
+                    <include
+                         layout="@layout/layout_load_tasas_animation" />
+
+                    <include
+                         layout="@layout/layout_load_tasas_animation" />
+
+                    <include
+                         layout="@layout/layout_load_tasas_animation" />
+
+                    <include
+                         layout="@layout/layout_load_tasas_animation" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

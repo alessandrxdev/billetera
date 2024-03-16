@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/content">
+
+            <ImageView
+                android:layout_height="120dp"
+                android:layout_width="120dp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textAppearance="?textAppearanceTitleLarge"
+                android:layout_margin="20dp"
+                android:text="@string/title_view_export" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textAppearance="?textAppearanceBodySmall"
+                android:text="@string/message_view_export" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_above="@+id/button_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_encrypt"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textAppearance="?textAppearanceBodySmall"
+                android:layout_marginLeft="10dp"
+                android:text="@string/message_switch_export" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/button_content">
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/buttom_share"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1.0"
+                android:text="Compartir" />
+
+            <Button
+                android:id="@+id/button_export"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1.0"
+                android:text="Exportar" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

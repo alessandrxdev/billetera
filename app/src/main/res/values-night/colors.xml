@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#9CF96D</color>
+    <color name="colorOnPrimary">#FFF</color>
+    <color name="colorPrimaryContainer">#1F5108</color>
+    <color name="colorOnPrimaryContainer">#9CF96D</color>
+
+    <!-- Secondary color -->
+    <color name="colorSecondary">#BCCBB0</color>
+    <color name="colorOnSecondary">#273421</color>
+    <color name="colorSecondaryContainer">#383838</color>
+    <color name="colorOnSecondaryContainer">#9CF96D</color>
+
+
+    <color name="colorTertiary">#DCBCE1</color>
+    <color name="colorOnTertiary">#3F2845</color>
+    <color name="colorTertiaryContainer">#603B4F</color>
+    <color name="colorOnTertiaryContainer">#FFD8EA</color>
+    <color name="colorError">#FFB4AB</color>
+    <color name="colorErrorContainer">#93000A</color>
+    <color name="colorOnError">#690005</color>
+    <color name="colorOnErrorContainer">#FFDAD6</color>
+    <color name="colorBackground">#000</color>
+    <color name="colorOnBackground">#E3E2E6</color>
+
+    <!-- Surface -->
+    <color name="colorSurface">#212121</color>
+    <color name="colorOnSurface">#E3E2E6</color>
+    <color name="colorSurfaceVariant">#44474E</color>
+    <color name="colorOnSurfaceVariant">#C8C5D0</color>
+    <color name="colorSurfaceContainerHighest">#44474E</color>
+
+    <color name="colorOutline">#928F99</color>
+    <color name="colorOnSurfaceInverse">#1C1B1F</color>
+    <color name="colorSurfaceInverse">#E5E1E6</color>
+    <color name="colorPrimaryInverse">#5854A8</color>
+    <color name="colorSurfaceTint">#C4C0FF</color>
+    <color name="colorOutlineVariant">#47464F</color>
+
+
+    <color name="pref_color_category">#E5E1E6</color>
+    <color name="pref_color_icon">#FFF</color>
+    <color name="btn_menu_bg">#80757575</color>
+
+</resources>

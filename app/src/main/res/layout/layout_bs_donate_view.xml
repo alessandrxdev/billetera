@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:padding="16dp"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textAppearance="?textAppearanceBodySmall"
+         android:layout_marginTop="6dp"
+         android:id="@+id/textMessage"
+         android:text="" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center|center_vertical"
+         android:orientation="horizontal"
+         android:layout_marginTop="20dp">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textAppearance="?textAppearanceBodyLarge"
+             android:layout_marginLeft="6dp"
+             android:text="Clave: " />
+
+        <EditText
+             android:layout_height="wrap_content"
+             android:layout_width="120dp"
+             android:background="@android:color/transparent"
+             android:hint="1234"
+             android:singleLine="true"
+             android:maxLength="4"
+             android:maxLines="1"
+             android:inputType="number"
+             android:id="@+id/clave"
+             android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <Button
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:background="@android:color/transparent"
+         android:layout_marginTop="20dp"
+         android:id="@+id/aceptar"
+         android:layout_gravity="right"
+         android:text="Continuar" />
+
+</LinearLayout>

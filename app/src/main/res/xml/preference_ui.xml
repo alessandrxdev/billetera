@@ -1,0 +1,42 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.arr.preferences.M3ListPreference
+        app:key="tema"
+        app:icon="@drawable/ic_dark_mode_24px"
+        app:title="@string/pref_title_theme"
+        app:dialogTitle="@string/pref_title_theme_dialog"
+        app:summary="@string/pref_summary_theme"
+        app:entries="@array/dark_entries"
+        app:entryValues="@array/dark_entries_value"
+        app:defaultValue="system" />
+
+    <com.arr.preferences.M3MultiSelectListPreference
+        app:key="monedas"
+        app:icon="@drawable/ic_currency_exchange_24px"
+        app:title="@string/pref_title_tasas"
+        app:dialogTitle="@string/pref_title_tasas_dialog"
+        app:summary="@string/pref_summary_tasas"
+        app:entries="@array/entries"
+        app:entryValues="@array/entries_value"
+        app:defaultValue="@array/entries_value_default" />
+
+    <com.arr.preferences.M3ListPreference
+        app:key="update_tasas"
+        app:icon="@drawable/ic_restart_24px"
+        app:title="Actualizar"
+        app:dialogTitle="Tiempo"
+        app:summary="Actualizar tasas de cambio automaticamente"
+        app:addText="Premium"
+        app:entries="@array/update_entries"
+        app:entryValues="@array/update_entries_value"
+        app:defaultValue="0" />
+
+    <com.arr.preferences.M3Preference
+        app:key="ahorro"
+        app:title="Ahorro de bateria"
+        app:summary="Desactivar ahorro de batería para mejor funcionamiento de las actualizaciones"
+        app:icon="@drawable/ic_battery_24px" />
+
+
+</PreferenceScreen>

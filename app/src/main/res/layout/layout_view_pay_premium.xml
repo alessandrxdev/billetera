@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/colorBackground"
+     android:padding="16dp"
+     android:orientation="vertical">
+
+    <ImageButton
+         android:layout_height="48dp"
+         android:layout_width="48dp"
+         android:contentDescription="@string/eliminar_content_description"
+         android:src="@drawable/ic_close"
+         android:background="?attr/selectableItemBackgroundBorderless"
+         android:layout_margin="5dp"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:id="@+id/close" />
+
+    <ImageView
+         android:layout_height="120dp"
+         android:layout_width="120dp"
+         android:src="@drawable/ic_premium"
+         android:layout_centerHorizontal="true"
+         android:layout_alignParentTop="true"
+         android:id="@+id/icon_premium" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_below="@id/icon_premium"
+         android:gravity="center_horizontal"
+         android:textAppearance="?textAppearanceTitleLarge"
+         android:textStyle="bold"
+         android:text="Premium"
+         android:id="@+id/title" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_below="@id/title"
+         android:gravity="center_horizontal"
+         android:textAppearance="?textAppearanceBodySmall"
+         android:text="Gracias por apoyar a Billetera\nEstas son las ventajas de pagar la suscripción"
+         android:id="@+id/subtitle" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_tips"
+         android:layout_centerVertical="true"
+         android:padding="8dp"
+         android:layout_centerHorizontal="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:id="@+id/recycler" />
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="20dp"
+         android:layout_above="@id/pay_premium"
+         app:strokeWidth="2dp">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:orientation="horizontal">
+
+            <RadioButton
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:id="@+id/checkPremium" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:layout_weight="1"
+                 android:text="Pago único" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="right"
+                 android:layout_weight="1"
+                 android:textStyle="bold"
+                 android:text="14.99 CUP" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_alignParentBottom="true"
+         android:id="@+id/pay_premium"
+         android:text="Obtener Premium" />
+
+</RelativeLayout>

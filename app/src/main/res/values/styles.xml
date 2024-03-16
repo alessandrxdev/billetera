@@ -1,0 +1,115 @@
+<resources>
+
+    <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/colorSurface</item>
+        <item name="android:elevation">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="android:background">@color/colorSurface</item>
+    </style>
+
+    <style name="LockScreenStyle">
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="LockScreenButtonStyle">
+        <item name="android:textColor">@color/colorOnSurface</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_selector_key_pf</item>
+        <item name="android:foreground">@drawable/key_foreground</item>
+    </style>
+
+    <style name="LockScreenFingerprintButtonStyle">
+        <item name="android:src">@drawable/ic_fingerprint_24px</item>
+    </style>
+
+    <style name="LockScreenDeleteButtonStyle">
+        <item name="android:src">@drawable/ic_clear_24px</item>
+    </style>
+
+    <style name="LockScreenCodeStyle">
+        <item name="android:button">@drawable/code_selector</item>
+    </style>
+
+    <style name="LockNextButtonStyle">
+        <item name="android:textColor">@color/colorOnSurface</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
+    <style name="LockTitleStyle">
+        <item name="android:textColor">@color/colorOnSurface</item>
+    </style>
+
+    <style name="LockHintStyle">
+        <item name="android:textColor">@color/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.MyApplication.AppWidget.Container" parent="android:Widget">
+        <item name="android:id">@android:id/background</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="Widget.MyApplication.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <!-- popup expand TextInputLayout -->
+    <style name="Widget.App.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/custom_popup_background</item>
+    </style>
+
+    <style name="M3TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+    </style>
+
+    <style name="M3TextInputLayoutDropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+    </style>
+
+
+    <!-- chips style -->
+
+    <style name="Widget.MaterialComponents.Chip.Filter" parent="Base.Widget.MaterialComponents.Chip">
+        <item name="android:checkable">true</item>
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+    </style>
+
+    <style name="Base.Widget.Material3.Chip" parent="Base.Widget.MaterialComponents.Chip">
+        <item name="shapeAppearance">?attr/shapeAppearanceCornerSmall</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Material3.Chip</item>
+        <item name="chipSurfaceColor">?attr/colorSurface</item>
+        <item name="chipBackgroundColor">@color/colorBackground</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipStrokeColor">@android:color/transparent</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.Chip</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Material3.Chip" parent="">
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="ThemeOverlay.Material3.Chip" parent="">
+        <!-- To tint vector drawables used as leading icons -->
+        <item name="colorControlNormal">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+</resources>

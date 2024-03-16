@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Billetera</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_settings">Ajustes</string>
+    <string name="title_add_card">Agregar</string>
+    <string name="title_edit_card">Editar</string>
+    <string name="title_info">Cuenta</string>
+    <string name="name_bank_bpa">Banco Popular de Ahorro</string>
+    <string name="name_bank_banmet">Banco Metropolitano</string>
+    <string name="name_bank_bandec">Banco de Crédito y Comercio</string>
+    <string name="hint_user">Titular</string>
+    <string name="hint_card">Tarjeta</string>
+    <string name="hint_moneda">Moneda</string>
+    <string name="hint_vence">Vence</string>
+    <string name="hint_phone">Móvil</string>
+    <string name="title_dialog_add">Agregar</string>
+
+    <string name="menu_add">Agregar</string>
+    <string name="menu_search">Buscar</string>
+
+    <string name="title_item_add_card">Tarjeta de crédito</string>
+    <string name="title_item_add_pasaje">Pasaje de Viajando</string>
+    <string name="content_description_credit_card_icon">Agregar tarjeta de crédito</string>
+    <string name="content_description_user_icon">Titular de la tarjeta</string>
+    <string name="content_description_moneda_icon">Tipo de moneda de la tarjeta</string>
+    <string name="content_description_vence_icon">Vencimiento de la tarjeta</string>
+    <string name="content_description_phone_icon">Número móvil del titular</string>
+    <string name="title_save">Guardar</string>
+    <string name="title_dialog_picker">Fecha de vencimiento</string>
+    <string name="text_terminos">
+        Al presionar Continuar usted acepta nuestras\n
+        <a href="https://github.com/esalessandrxx/billetera-android/blob/main/privacy/privacy-policies.md"> Políticas de Privacidad</a>
+        y
+        <a href="https://www.com/"> Términos de Uso</a>
+        .
+    </string>
+
+    <string name="text_edit">Editar</string>
+    <string name="text_delete">Eliminar</string>
+    <string name="text_share">Compartir</string>
+    <string name="text_scanner_to_tm">Escanee desde Transfermóvil</string>
+    <string name="historial_transacciones">Historial de Transacciones</string>
+    <string name="tite_permission_sms">Mensajes</string>
+    <string name="message_permission_sms">Le solicitamos acceso a sus mensajes para poder obtener el histoial de transacciones realizadas a sus tarjetas.\nEstos datos nunca serán compartidos con terceros.</string>
+
+    <string name="message_import">Inserte el token con el cual usted guardó su copia de seguridad</string>
+    <string name="message_export">Inserte el token generado anteriormente. Si aún no tiene un token, puede generarlo en la sección "Copias de seguridad" de la configuración de la aplicación.</string>
+    <string name="message_token">Guarde este token en un lugar seguro. Es único y necesario para importar sus copias de seguridad en otros dispositivos. Si lo pierde, no podrá importar sus copias de seguridad.</string>
+
+    <string name="pref_title_token">Token</string>
+    <string name="pref_summary_token">Generar una clave para guardar sus copias de seguridad</string>
+
+    <string name="pref_title_import">Importar</string>
+    <string name="pref_title_category_backup">Archivo local</string>
+    <string name="pref_title_export">Exportar a un archivo</string>
+    <string name="pref_summary_export">Crear una copia de seguridad local de sus tarjetas</string>
+
+    <string name="pref_backup">Respaldo</string>
+    <string name="pref_summary_backup">Realizar copia de seguridad de sus tarjetas</string>
+
+    <string name="pref_security">Seguridad</string>
+    <string name="pref_support">Soporte</string>
+    <string name="pref_donate">Donar</string>
+    <string name="pref_share">Compartir</string>
+    <string name="pref_about">Acerca de</string>
+    <string name="pref_title_ui">Apariencia</string>
+    <string name="pref_summary_ui">Apariencia de la aplicación</string>
+    <string name="pref_title_tasas">Tasas</string>
+    <string name="pref_title_tasas_dialog">Mostrar:</string>
+    <string name="pref_summary_tasas">Seleccionar que tasas de cambio desea mostrar en la pantalla principal</string>
+
+    <string name="pref_title_theme">Tema</string>
+    <string name="pref_title_theme_dialog">Sleccionar</string>
+    <string name="pref_summary_theme">Seleccionar el tema dentro de la aplicación</string>
+
+
+    <string name="entries_tasa_oficial">Cambio oficial</string>
+    <string name="entries_tasa_informal">Cambio informal</string>
+
+    <string name="entries_dark_theme">Oscuro</string>
+    <string name="entries_light_theme">Claro</string>
+    <string name="entries_system">Según el sistema</string>
+
+    <string name="message_view_export">Exporta este archivo para mantener tus tarjrtas aseguradas. Podrás importarlas después en este o en otros dispositivos que usen la aplicación.</string>
+    <string name="title_view_export">Tu archivo de copia de seguridad está listo para exportarse</string>
+    <string name="message_switch_export">Exportar archivo sin cifrar (no recomendado)</string>
+    <string name="message_tasas">En las tasas de cambio → hace referencia a el valor de venta de la moneda y ← a el valor de compra.\nBilletera extrae la información de fuentes de terceros, por lo que no nos hacemos responsable de que esta se mantengan actualizadas.</string>
+
+    <string name="pref_title_lock">Código PIN</string>
+    <string name="pref_summary_lock">Bloquear acceso a la aplicación con su PIN</string>
+    <string name="pref_title_restart_lock">Cambiar PIN</string>
+    <string name="pref_summary_restart_lock">Cambiar el PIN de acceso a la aplicación</string>
+    <string name="title_calcular">Calcular</string>
+    <string name="inserte_su_pin">Ingrese su PIN</string>
+    <string name="aceptar_button">Aceptar</string>
+    <string name="welcome_summary">Billetera</string>
+    <string name="continuar_buttom">Continuar</string>
+    <string name="no_empty_data">No pueden haber campos vacíos</string>
+    <string name="datos_cargados_done">Datos cargados con éxito</string>
+    <string name="data_load_error">Error al cargar los datos</string>
+    <string name="title_tasas_de_cambio">Tasas de cambio</string>
+    <string name="add_floating">Agregar</string>
+    <string name="title_compras">Gastos</string>
+    <string name="title_respaldo">Respaldo</string>
+    <string name="title_notificacion">Notificación</string>
+    <string name="title_exportar">Exportar</string>
+    <string name="title_create_pin">Crear PIN</string>
+    <string name="title_seguridad">Seguridad</string>
+    <string name="title_permiso_notificaciones">Notificaciones</string>
+    <string name="conceder_accesp_a_las_notificaciones">Conceder acceso a las notificaciones</string>
+    <string name="disable_notifi_tasas">Desactivar notificacon de actualizacion de tasas</string>
+    <string name="category_privacidad">Privacidad</string>
+    <string name="title_pref_screenshot">Captura de pantalla</string>
+    <string name="summary_pref_screenshot">Permitir captura de pantalla por 5 minutos</string>
+    <string name="eliminar_content_description">Eliminar</string>
+    <string name="hint_100_cup">100 CUP</string>
+    <string name="hint_200_cup">200 CUP</string>
+    <string name="hint_50_cup">50 CUP</string>
+    <string name="hint_5_cup">5 CUP</string>
+    <string name="hint_1000_cup">1000 CUP</string>
+    <string name="hint_1_cup">1 CUP</string>
+    <string name="hint_500_cup">500 CUP</string>
+    <string name="hint_10_cup">10 CUP</string>
+    <string name="hint_3_cup">3 CUP</string>
+    <string name="hint_20_cup">20 CUP</string>
+    <string name="calculate_total">Total:</string>
+    <string name="empty_calculate__0">0</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_tasa_oficial">Tasa Oficial</string>
+    <string name="content_description_editar_tarjeta">editar tarjeta</string>
+    <string name="content_description_eliminar_tarjeta">eliminar tarjeta</string>
+    <string name="content_description_compartir">compartir tarjeta como texto plano</string>
+    <string name="content_description_codigo_qr">codigo qr</string>
+    <string name="fragment_about">Acerca de</string>
+    <string name="fab_siguiente">siguiente</string>
+    <string name="hint_saldo">Ingresos</string>
+    <string name="buttom_title_calcular">Calcular</string>
+    <string name="message_gastos">Para continuar inserte su ingreso mensual</string>
+    <string name="ops">Ops!</string>
+    <string name="not_data">No existen datos guardados</string>
+    <string name="fragment_bill">Gastos</string>
+    <string name="title_ingresos">Ingresos</string>
+    <string name="title_gastos">Gastos</string>
+    <string name="title_cup">CUP:</string>
+    <string name="title_bs_ingreso">Ingreso</string>
+    <string name="title_chip_banco">Banco</string>
+    <string name="title_chip_transferencia">Transferencia</string>
+    <string name="title_chip_efectivo">Efectivo</string>
+    <string name="hint_cantidad">Cantidad</string>
+    <string name="hint_titular">Titular...</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">Widget informativo con las tasas de cambio informal.</string>
+    <string name="telegram">Telegram</string>
+    <string name="message_notification">Mostrar notificación de actualización de las tasas de cambio.</string>
+
+
+    <!-- help string -->
+    <string name="title_help1">Transferencias</string>
+    <string name="message_help1">Cuándo usted recibe una transferencia le enviarán un mensaje de confirmación. En el caso de Transfermóvil será recibido desde PAGOxMOVIL y en Enzona será un mensaje desde Enzona, en muchos dispositivos no podrá responder a los mensajes. Si el mensaje de confirmación no es recibido desde uno de estos dos remitentes tenga cuidado, puede estar bajo una ESTAFA.</string>
+    <string name="title_help2">Foto de mi tarjeta</string>
+    <string name="message_help2">En Cuba las tarjetas de crédito no cuentan con un CVV (Código de Valor de Verificación de Tarjeta) por lo tanto no puede ser usada online, pero esto no lo exime de ser una víctima de estafas, por lo tanto le recomendamos no enviar fotos de su carnet de identidad, tarjetas matrices de los bancos, PIN o claves de acceso a sus cuentas.</string>
+    <string name="title_help3">Descargar Enzona y Transfermóvil</string>
+    <string name="message_help3">
+        Es recomendable descargar tanto Transfermóvil como Enzona desde
+        <a href="https://www.apklis.cu">Apklis</a>
+        , también puede descargar Transfermóvil desde la página web de
+        <a href="https://www.etecsa.cu">ETECSA</a>
+        , son las únicas vías confiables para descargar dichas aplicaciones.
+    </string>
+    <string name="title_help4">Códigos USSD</string>
+    <string name="message_help4">No ejecute códigos que comiencen con *444*68* el cual elimina su registro de Transfermóvil y esto haría que su tarjeta no esté emparejada a su número móvil.</string>
+    <string name="title_help5">Contacto</string>
+    <string name="message_help5">
+        <b>Transfermóvil:</b>
+        \n- Llamando al 118\n- Correo electrónico atencion.usuarios@etecsa.cu\n\n
+        <b>ENZONA:</b>
+        \n- Correos electrónico enzona@xetid.cu o soporte@xetid.cu\n- Números de teléfono:\n• 59984859\n• 59875867\n• 50974933\n• 59994334\n• 59933173\n• 50974861\n• 50974814\n• 50974794\n• 50974791
+    </string>
+
+    <string name="share_card">💳 TARJETA EN</string>
+    <string name="share_phone">Confirmar a:</string>
+    <string name="empty_gastos">Vamos bien, aún no tienes gastos.</string>
+    <string name="recom_gastos">Gasto estimado por día</string>
+    <string name="donate">Con tu contribución, estarás respaldando el progreso de la aplicación. La creación de una aplicación freelance implica costos directos para su creador/programador, lo que a menudo lleva a que proyectos gratuitos de este tipo queden abandonados con el tiempo.\n¡Valoramos sinceramente cualquier forma de colaboración que puedas brindar!</string>
+    <string name="tips_add_card">Para mayor seguridad, sus datos son almacenados en su dispositivo móvil de forma privada y nunca serán compartidos con terceros.</string>
+
+</resources>

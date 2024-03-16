@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    style="@style/Widget.MyApplication.AppWidget.Container"
+    android:theme="@style/AppTheme.AppWidgetContainer">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_above="@id/icon"
+        android:text="Tasa de Cambio" />
+
+    <ImageView
+        android:layout_height="34dp"
+        android:layout_width="34dp"
+        android:src="@drawable/ic_transfer_24px"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/icon" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.arr.preferences.DefSwitchPreference
+        app:key="notify"
+        app:icon="@drawable/ic_notification_24px"
+        app:title="@string/title_permiso_notificaciones"
+        app:summary="@string/conceder_accesp_a_las_notificaciones" />
+
+    <com.arr.preferences.DefSwitchPreference
+        app:key="update"
+        app:icon="@drawable/ic_restart_24px"
+        app:title="@string/pref_title_tasas"
+        app:summary="@string/disable_notifi_tasas"/>
+</PreferenceScreen>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingEnd="16dp"
+    android:orientation="vertical"
+    android:paddingStart="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/hint_user"
+        app:startIconContentDescription="@string/content_description_user_icon"
+        style="@style/M3TextInputLayout"
+        app:startIconDrawable="@drawable/ic_user_24px"
+        app:errorEnabled="true"
+        android:id="@+id/input_layout_user">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:inputType="textPersonName"
+            android:id="@+id/edit_user" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/hint_card"
+        style="@style/M3TextInputLayout"
+        app:startIconContentDescription="@string/content_description_credit_card_icon"
+        app:startIconDrawable="@drawable/ic_credit_card_24px"
+        app:errorEnabled="true"
+        android:id="@+id/input_layout_card">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:maxLength="19"
+            android:maxLines="1"
+            android:digits=" 0123456789"
+            android:inputType="number"
+            android:id="@+id/edit_card" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="@string/hint_moneda"
+            app:startIconContentDescription="@string/content_description_moneda_icon"
+            android:layout_marginRight="4dp"
+            style="@style/M3TextInputLayoutDropdown"
+            app:startIconDrawable="@drawable/ic_moneda_24px"
+            app:errorEnabled="true"
+            android:focusable="false"
+            android:layout_weight="1.0"
+            android:id="@+id/input_layout_moneda">
+
+            <AutoCompleteTextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:focusable="false"
+                app:simpleItems="@array/moneda_items"
+                app:simpleItemSelectedColor="@color/colorSecondaryContainer"
+                android:focusableInTouchMode="false"
+                android:cursorVisible="false"
+                android:popupBackground="@drawable/custom_popup_background"
+                android:maxLines="1"
+                android:inputType="none"
+                android:id="@+id/edit_moneda" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:contentDescription="@string/content_description_vence_icon"
+            android:hint="@string/hint_vence"
+            style="@style/M3TextInputLayout"
+            app:helperText="Opcional"
+            app:startIconContentDescription="@string/content_description_vence_icon"
+            android:layout_marginLeft="4dp"
+            app:startIconDrawable="@drawable/ic_calendar_24px"
+            app:errorEnabled="true"
+            android:layout_weight="1.0"
+            android:id="@+id/input_layout_vence">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:imeOptions="actionNext"
+                android:clickable="false"
+                android:singleLine="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:cursorVisible="false"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:digits="\/0123456789"
+                android:inputType="number"
+                android:id="@+id/edit_vence" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:contentDescription="@string/content_description_phone_icon"
+        android:hint="@string/hint_phone"
+        app:helperText="Opcional"
+        style="@style/M3TextInputLayout"
+        app:startIconContentDescription="@string/content_description_phone_icon"
+        app:prefixText="+53 "
+        app:startIconDrawable="@drawable/ic_phone_24px"
+        app:errorEnabled="true"
+        android:id="@+id/input_layout_phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:digits="0123456789"
+            android:inputType="phone"
+            android:id="@+id/edit_phone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:drawablePadding="20dp"
+        android:background="@drawable/bg_tips"
+        android:drawableLeft="@drawable/ic_tips_24px"
+        android:textAppearance="?textAppearanceLabelSmall"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tips_add_card" />
+
+</LinearLayout>

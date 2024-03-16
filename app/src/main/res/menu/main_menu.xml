@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_search_24px" />
+
+    <item
+        android:id="@+id/menu_add"
+        android:title="@string/menu_add"
+        app:showAsAction="always"
+        app:actionLayout="@layout/custom_main_menu_add" />
+
+</menu>

@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.arr.preferences.M3SwitchPreference
+        app:icon="@drawable/ic_lock_screen_24px"
+        app:key="create_pin"
+        app:summary="@string/pref_summary_lock"
+        app:title="@string/pref_title_lock" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_restart_24px"
+        app:key="restart"
+        app:summary="@string/pref_summary_restart_lock"
+        app:title="@string/pref_title_restart_lock" />
+
+    <com.arr.preferences.M3PreferenceCategory
+        app:allowDividerAbove="false"
+        app:allowDividerBelow="false"
+        app:key="screen"
+        app:title="@string/category_privacidad">
+
+        <com.arr.preferences.DefSwitchPreference
+            app:icon="@drawable/ic_screenshot_24px"
+            app:key="screenshot"
+            app:summary="@string/summary_pref_screenshot"
+            app:title="@string/title_pref_screenshot" />
+
+    </com.arr.preferences.M3PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.arr.bancamovil.ui.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_tool"
+        android:name="com.arr.bancamovil.ui.tool.ToolFragment"
+        android:label="Util"
+        tools:layout="@layout/fragment_tool" />
+
+    <fragment
+        android:id="@+id/navigation_calculate"
+        android:name="com.arr.bancamovil.ui.tool.CalculateFragment"
+        android:label="@string/title_calcular"
+        tools:layout="@layout/fragment_calculate" />
+
+    <fragment
+        android:id="@+id/navigation_market"
+        android:name="com.arr.bancamovil.ui.tool.bill.BillFragment"
+        android:label="@string/title_compras"
+        tools:layout="@layout/fragment_bill" />
+
+    <fragment
+        android:id="@+id/navigation_add_card"
+        android:name="com.arr.bancamovil.ui.add.AddCardFragment"
+        android:label="@string/title_add_card"
+        tools:layout="@layout/fragment_add" />
+
+    <fragment
+        android:id="@+id/navigation_edit_card"
+        android:name="com.arr.bancamovil.ui.add.EditCardFragment"
+        android:label="@string/title_edit_card"
+        tools:layout="@layout/fragment_add" />
+
+    <fragment
+        android:id="@+id/navigation_info"
+        android:name="com.arr.bancamovil.ui.home.InfoFragment"
+        android:label="@string/title_info"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.arr.bancamovil.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_backup"
+        android:name="com.arr.bancamovil.ui.settings.BackupFragment"
+        android:label="@string/title_respaldo"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_money"
+        android:name="com.arr.bancamovil.ui.settings.UiFragment"
+        android:label="@string/pref_title_ui"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_notify"
+        android:name="com.arr.bancamovil.ui.settings.NotifyPreference"
+        android:label="@string/title_notificacion"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_export"
+        android:name="com.arr.bancamovil.ui.settings.ExportFragment"
+        android:label="@string/title_exportar"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/navigation_create_pin"
+        android:name="com.arr.bancamovil.ui.settings.security.CreatePinFragment"
+        android:label="@string/title_create_pin"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_security"
+        android:name="com.arr.bancamovil.ui.settings.SecurityFragment"
+        android:label="@string/title_seguridad"
+        tools:layout="@layout/fragment_settings">
+
+        <action
+            android:id="@+id/action_navigation_security_pop"
+            app:popUpTo="@id/navigation_security"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.arr.bancamovil.ui.settings.AboutFragment"
+        android:label="@string/fragment_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/navigation_bill"
+        android:name="com.arr.bancamovil.ui.tool.bill.BillFragment"
+        android:label="@string/fragment_bill"
+        tools:layout="@layout/fragment_bill" >
+
+        <action
+            android:id="@+id/action_navigation_bill_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_help"
+        android:name="com.arr.bancamovil.ui.settings.HelpFragment"
+        android:label="Ayuda"
+        tools:layout="@layout/fragment_help" />
+
+</navigation>

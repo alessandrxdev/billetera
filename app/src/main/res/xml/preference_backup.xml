@@ -1,0 +1,31 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:allowDividerAbove="false"
+    app:allowDividerBelow="false"
+    app:shouldDisableView="false">
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_encrypted_24px"
+        app:key="token"
+        app:summary="@string/pref_summary_token"
+        app:title="@string/pref_title_token" />
+
+    <com.arr.preferences.M3PreferenceCategory
+        app:allowDividerAbove="false"
+        app:allowDividerBelow="false"
+        app:key="local"
+        app:title="@string/pref_title_category_backup">
+
+        <com.arr.preferences.M3Preference
+            app:icon="@drawable/ic_backup_download_24px"
+            app:key="import"
+            app:title="@string/pref_title_import" />
+
+        <com.arr.preferences.M3Preference
+            app:icon="@drawable/ic_backup_upload_24px"
+            app:key="export"
+            app:summary="@string/pref_summary_export"
+            app:title="@string/pref_title_export" />
+
+    </com.arr.preferences.M3PreferenceCategory>
+
+</PreferenceScreen>

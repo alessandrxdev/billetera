@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:textAppearance="?textAppearanceTitleLarge"
+         android:layout_margin="@dimen/activity_vertical_margin"
+         android:id="@+id/title_dialog"
+         android:text="@string/title_bs_ingreso" />
+
+    <HorizontalScrollView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:scrollIndicators="top">
+
+        <com.google.android.material.chip.ChipGroup
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_marginEnd="@dimen/activity_horizontal_margin"
+             app:singleSelection="true"
+             android:paddingRight="20dp"
+             app:singleLine="true"
+             android:layout_marginStart="@dimen/activity_horizontal_margin"
+             android:id="@+id/chip_group">
+
+            <com.google.android.material.chip.Chip
+                 android:layout_height="55dp"
+                 android:layout_width="wrap_content"
+                 style="@style/Widget.Material3.Chip.Filter"
+                 android:id="@+id/chip_cash"
+                 android:text="@string/title_chip_efectivo" />
+
+            <com.google.android.material.chip.Chip
+                 android:layout_height="55dp"
+                 android:layout_width="wrap_content"
+                 style="@style/Widget.Material3.Chip.Filter"
+                 android:id="@+id/chip_bank"
+                 android:text="@string/title_chip_banco" />
+
+            <com.google.android.material.chip.Chip
+                 android:layout_height="55dp"
+                 android:layout_width="wrap_content"
+                 style="@style/Widget.Material3.Chip.Filter"
+                 android:id="@+id/chip_transfer"
+                 android:text="@string/title_chip_transferencia" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center_horizontal"
+         android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/cantidad"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:background="@android:color/transparent"
+             android:hint="0 CUP"
+             android:textAppearance="?textAppearanceHeadlineMedium"
+             android:singleLine="true"
+             android:maxLength="10"
+             android:maxLines="1"
+             android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_margin="@dimen/activity_horizontal_margin"
+         android:layout_marginTop="30dp">
+
+        <Button
+             android:layout_height="55dp"
+             android:layout_width="match_parent"
+             android:layout_margin="4dp"
+             app:cornerRadius="10dp"
+             style="?attr/materialButtonOutlinedStyle"
+             android:layout_weight="1"
+             android:id="@+id/b_negative"
+             android:text="@android:string/cancel" />
+
+        <Button
+             android:layout_height="55dp"
+             android:layout_width="match_parent"
+             android:layout_margin="4dp"
+             app:cornerRadius="10dp"
+             style="@style/Widget.Material3.Button"
+             android:layout_weight="1"
+             android:id="@+id/b_positive"
+             android:text="@android:string/ok" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    app:cardElevation="5dp"
+    android:id="@+id/rootItem">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_height="34dp"
+                android:layout_width="34dp"
+                android:src="@drawable/ic_bus_24px"
+                android:background="@drawable/bg_logo_bank"
+                android:padding="6dp"
+                android:tint="#000"
+                android:id="@+id/logo" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textAppearance="?textAppearanceBodyMedium"
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFF"
+                android:text="Viajando"
+                android:id="@+id/name" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.0">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceTitleMedium"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:text="Salida" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceBodyMedium"
+                    android:textColor="#FFF"
+                    android:id="@+id/salida"
+                    android:text="Santa Clara" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.0">
+
+                <ImageView
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:tint="#FFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="1.0">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceTitleMedium"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"
+                    android:text="Llegada" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?textAppearanceBodyMedium"
+                    android:textColor="#FFF"
+                    android:id="@+id/detino"
+                    android:text="Holguin" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="?textAppearanceBodySmall"
+                android:textColor="#FFF"
+                android:drawableTint="#FFF"
+                android:layout_weight="1.0"
+                android:drawableTop="@drawable/ic_asiento_24px"
+                android:id="@+id/asiento" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

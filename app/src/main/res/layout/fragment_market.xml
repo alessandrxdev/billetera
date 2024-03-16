@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     tools:context=".ui.tool.MarketFragment">
+
+    <RelativeLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:padding="16dp">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="4dp"
+             android:orientation="vertical"
+             android:id="@+id/content1">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textAppearance="?textAppearanceBodySmall"
+                 android:text="Total" />
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:layout_weight="1">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="@dimen/dimens_30dp"
+                     android:text="@string/title_cup" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="@dimen/dimens_30dp"
+                     android:layout_marginStart="5dp"
+                     android:id="@+id/saldo_total"
+                     android:text="0.00"
+                     android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textAppearance="?textAppearanceBodySmall"
+                 android:layout_marginTop="6dp"
+                 android:id="@+id/text_recomendado"
+                 android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_below="@id/content1"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:layout_marginTop="30dp"
+             android:id="@+id/content2">
+
+            <androidx.cardview.widget.CardView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:clickable="true"
+                 android:layout_margin="3dp"
+                 app:cardElevation="0dp"
+                 app:strokeWidth="0dp"
+                 app:cardCornerRadius="20dp"
+                 android:layout_weight="1.0"
+                 android:focusable="true"
+                 android:id="@+id/ingresos">
+
+                <RelativeLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:background="@drawable/bg_card_ingresos"
+                     android:padding="6dp">
+
+                    <ImageView
+                         android:layout_height="24dp"
+                         android:layout_width="24dp"
+                         android:src="@drawable/ic_receive"
+                         android:layout_margin="10dp"
+                         android:tint="@android:color/white"
+                         android:layout_alignParentStart="true"
+                         android:layout_alignParentTop="true"
+                         tools:ignore="UseAppTint"
+                         android:id="@+id/icon" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:layout_toEndOf="@id/icon"
+                         android:layout_centerVertical="true"
+                         android:textAppearance="?textAppearanceBodyLarge"
+                         android:singleLine="true"
+                         android:textColor="@android:color/white"
+                         android:layout_marginTop="10dp"
+                         android:layout_alignParentTop="true"
+                         tools:ignore="RelativeOverlap"
+                         android:id="@+id/title_ingresos"
+                         android:text="@string/title_ingresos" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:layout_below="@id/title_ingresos"
+                         android:gravity="center_vertical"
+                         android:textSize="18sp"
+                         android:textColor="@android:color/white"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginStart="10dp"
+                         android:id="@+id/text_ingresos"
+                         android:text="0,000.00 CUP"
+                         android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:clickable="true"
+                 android:layout_margin="3dp"
+                 app:cardElevation="0dp"
+                 app:strokeWidth="0dp"
+                 app:cardCornerRadius="20dp"
+                 android:layout_weight="1.0"
+                 android:focusable="true"
+                 android:id="@+id/card_gastos">
+
+                <RelativeLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:background="@drawable/bg_card_gastos"
+                     android:padding="6dp">
+
+                    <ImageView
+                         android:layout_height="24dp"
+                         android:layout_width="24dp"
+                         android:src="@drawable/ic_send"
+                         android:layout_margin="10dp"
+                         android:tint="@android:color/black"
+                         android:layout_alignParentStart="true"
+                         android:layout_alignParentTop="true"
+                         tools:ignore="UseAppTint"
+                         android:id="@+id/icon_gastos" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:layout_toEndOf="@id/icon_gastos"
+                         android:layout_centerVertical="true"
+                         android:textAppearance="?textAppearanceBodyLarge"
+                         android:singleLine="true"
+                         android:textColor="@android:color/black"
+                         android:layout_marginTop="10dp"
+                         android:layout_alignParentTop="true"
+                         tools:ignore="RelativeOverlap"
+                         android:id="@+id/gastos"
+                         android:text="@string/title_gastos" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:layout_below="@id/gastos"
+                         android:gravity="center_vertical"
+                         android:textSize="18sp"
+                         android:textColor="@android:color/black"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginStart="10dp"
+                         android:id="@+id/text_gastos"
+                         android:text="0,000.00 CUP"
+                         android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:visibility="gone"
+             android:gravity="center_horizontal"
+             android:layout_centerVertical="true"
+             android:textSize="25dp"
+             android:text="Próximamente...😊" />
+
+        <androidx.recyclerview.widget.RecyclerView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_below="@id/content2"
+             android:layout_marginTop="10dp"
+             android:id="@+id/recycler_market" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

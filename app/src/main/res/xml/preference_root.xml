@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:allowDividerAbove="false"
+    app:allowDividerBelow="false"
+    app:shouldDisableView="false">
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_backup_upload_24px"
+        app:key="backup"
+        app:summary="@string/pref_summary_backup"
+        app:title="@string/pref_backup" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_ui_24px"
+        app:key="ui"
+        app:summary="@string/pref_summary_ui"
+        app:title="@string/pref_title_ui" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_security_24px"
+        app:key="security"
+        app:summary="Opciones de seguridad en la aplicación"
+        app:title="@string/pref_security" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_notification_24px"
+        app:key="notify"
+        app:summary="Configuración de notificaciones"
+        app:title="Notificaciones" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_support_24px"
+        app:key="support"
+        app:summary="Contactar con el soporte"
+        app:title="@string/pref_support" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_help"
+        app:key="help"
+        app:summary="Información útil para el usuario"
+        app:title="Ayuda" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_donate_24px"
+        app:key="donate"
+        app:summary="Apoyar con el desarrollo de la app"
+        app:title="@string/pref_donate" />
+
+    <com.arr.preferences.M3Preference
+        app:icon="@drawable/ic_about_24px"
+        app:key="about"
+        app:summary="Versión, redes sociales"
+        app:title="@string/pref_about" />
+
+</PreferenceScreen>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:padding="10dp"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:textAppearance="?textAppearanceTitleMedium"
+         android:layout_margin="10dp"
+         android:id="@+id/title" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:textAppearance="?textAppearanceBodyMedium"
+         android:layout_margin="10dp"
+         android:id="@+id/message" />
+
+    <com.google.android.material.textfield.TextInputLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         app:counterEnabled="true"
+         android:layout_margin="10dp"
+         app:counterMaxLength="32">
+
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:hint="Ej. XjJWKxSka283vUw88q"
+             android:singleLine="true"
+             android:maxLength="32"
+             android:maxLines="1"
+             android:id="@+id/edit_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center_vertical|right"
+         android:padding="2dp"
+         android:layout_marginTop="10dp">
+
+        <Button
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_margin="4dp"
+             style="@style/Widget.Material3.Button.TextButton"
+             android:id="@+id/cancelar"
+             android:text="@android:string/cancel" />
+
+        <Button
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:layout_margin="4dp"
+             style="@style/Widget.Material3.Button.TextButton"
+             android:id="@+id/aceptar"
+             android:text="@android:string/ok" />
+
+    </LinearLayout>
+
+</LinearLayout>
