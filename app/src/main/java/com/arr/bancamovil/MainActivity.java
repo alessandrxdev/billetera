@@ -17,15 +17,15 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
-import com.arr.apklislib.ApklisUtils;
+
 import com.arr.bancamovil.broadcast.SmsReceiver;
 import com.arr.bancamovil.databinding.ActivityMainBinding;
+import com.arr.bugsend.BugSend;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private SmsReceiver smsReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.mToolbar);
+
+        // crash app
+        new BugSend(this).setLaunchActivity(LogActivity.class).show();
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -84,32 +87,6 @@ public class MainActivity extends AppCompatActivity {
                             WindowManager.LayoutParams.FLAG_SECURE,
                             WindowManager.LayoutParams.FLAG_SECURE);
         }
-
-        smsReceiver = new SmsReceiver();
-        // Crear un IntentFilter con la acción de SMS_RECEIVED
-        IntentFilter intentFilter = new IntentFilter(Telephony.Sms.Intents.SMS_RECEIVED_ACTION);
-        // Registrar el BroadcastReceiver
-        registerReceiver(smsReceiver, intentFilter);
-
-        // check pay apklis
-        ApklisUtils.PurchaseInfo purchaseInfo = ApklisUtils.isPurchased(this, getPackageName());
-        System.out.println("Paid apklis: " + purchaseInfo);
-        if (purchaseInfo.isPaid()) {
-           // Toast.makeText(this, "Pagada", Toast.LENGTH_LONG).show();
-        } else {
-           // Toast.makeText(this, "App no pagada", Toast.LENGTH_LONG).show();
-        }
-
-        /*    String paidCheked = PaidCheked.Companion.isPurchased(this, "com.ahg.cupcontador");
-        Log.e("APKLIS ", paidCheked);
-        switch (paidCheked) {
-            case "result00":
-                showAlertDialogPay();
-            case "result02":
-                Toast.makeText(this, "No autenticado", Toast.LENGTH_LONG).show();
-            default:
-                Toast.makeText(this, "Comprada", Toast.LENGTH_LONG).show();
-        }*/
     }
 
     @Override
@@ -129,9 +106,5 @@ public class MainActivity extends AppCompatActivity {
 
     public Window getMainWindow() {
         return getWindow();
-    }
-
-    private void showAlertDialogPay() {
-        new MaterialAlertDialogBuilder(this).setView(R.layout.layout_view_pay_premium).show();
     }
 }

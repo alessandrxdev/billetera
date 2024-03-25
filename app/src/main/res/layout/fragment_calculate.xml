@@ -1,334 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinator"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:id="@+id/coordinator">
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+         android:id="@+id/nested_scroll_view">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="16dp"
+             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_tips"
-                android:padding="10dp">
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:background="@drawable/bg_tips"
+                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/calculate_total"
-                    android:textAppearance="?textAppearanceHeadlineMedium" />
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_centerVertical="true"
+                     android:textAppearance="?textAppearanceHeadlineMedium"
+                     android:layout_alignParentStart="true"
+                     android:id="@+id/text"
+                     android:text="@string/calculate_total" />
 
                 <TextView
-                    android:id="@+id/text_total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@id/text"
-                    android:singleLine="true"
-                    android:text="@string/empty_calculate__0"
-                    android:textAppearance="?textAppearanceHeadlineMedium"
-                    tools:ignore="RelativeOverlap" />
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_toEndOf="@id/text"
+                     android:layout_centerVertical="true"
+                     android:textAppearance="?textAppearanceHeadlineMedium"
+                     android:singleLine="true"
+                     android:layout_marginStart="10dp"
+                     tools:ignore="RelativeOverlap"
+                     android:id="@+id/text_total"
+                     android:text="@string/empty_calculate__0" />
 
                 <ImageButton
-                    android:id="@+id/delete"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/eliminar_content_description"
-                    android:src="@drawable/ic_delete" />
+                     android:layout_height="48dp"
+                     android:layout_width="48dp"
+                     android:contentDescription="@string/eliminar_content_description"
+                     android:src="@drawable/ic_delete"
+                     android:background="?attr/selectableItemBackgroundBorderless"
+                     android:layout_centerVertical="true"
+                     android:layout_margin="5dp"
+                     android:layout_alignParentEnd="true"
+                     android:id="@+id/delete" />
 
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:baselineAligned="false"
+                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_1_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_1_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_one">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_one"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_one" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_three"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_3_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_3_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_three">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_three"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_five"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_5_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_five"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_ten"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_10_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_ten"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_three" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:baselineAligned="false">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_twenty"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_20_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_5_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_five">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_twenty"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_five" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_fifty"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_50_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_10_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_ten">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_fifty"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_cien"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_100_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_cien"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_dosciento"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_200_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_dosciento"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_ten" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:baselineAligned="false">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_quiniento"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_500_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_20_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_twenty">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_quiniento"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_twenty" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/input_layout_mil"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1.0"
-                    android:hint="@string/hint_1000_cup"
-                    app:errorEnabled="true"
-                    app:startIconContentDescription="@string/content_description_credit_card_icon">
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_50_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_fifty">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_mil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:digits="0123456789"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="8"
-                        android:maxLines="1"
-                        android:singleLine="true" />
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_fifty" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:baselineAligned="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_100_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_cien">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_cien" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_200_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_dosciento">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_dosciento" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal"
+                 android:baselineAligned="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_500_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_quiniento">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_quiniento" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:hint="@string/hint_1000_cup"
+                     android:layout_margin="3dp"
+                     app:startIconContentDescription="@string/content_description_credit_card_icon"
+                     style="@style/M3TextInputLayout"
+                     app:errorEnabled="true"
+                     android:layout_weight="1.0"
+                     android:id="@+id/input_layout_mil">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:imeOptions="actionNext"
+                         android:singleLine="true"
+                         android:maxLength="8"
+                         android:maxLines="1"
+                         android:digits="0123456789"
+                         android:inputType="number"
+                         android:id="@+id/edit_mil" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

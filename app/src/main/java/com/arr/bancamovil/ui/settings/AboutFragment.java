@@ -23,15 +23,16 @@ import com.arr.bancamovil.BuildConfig;
 import com.arr.bancamovil.databinding.FragmentAboutBinding;
 
 public class AboutFragment extends Fragment {
-    
+
     private FragmentAboutBinding binding;
 
     @SuppressLint("SetTextI18n")
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         binding = FragmentAboutBinding.inflate(inflater, container, false);
         addOptionMenu();
 
@@ -39,17 +40,25 @@ public class AboutFragment extends Fragment {
         binding.textVersionApp.setText("v" + versionName);
 
         // acces to telegram
-        binding.telegram.setOnClickListener(view -> {
-            requireActivity()
-                    .startActivity(
-                            new Intent(
-                                    Intent.ACTION_VIEW,
-                                    Uri.parse("https://t.me/applifycu")));
+        binding.telegram.setOnClickListener(
+                view -> {
+                    requireActivity()
+                            .startActivity(
+                                    new Intent(
+                                            Intent.ACTION_VIEW,
+                                            Uri.parse("https://t.me/applifycu")));
+                });
 
-        });
+        binding.valorar.setOnClickListener(
+                view ->
+                        requireActivity()
+                                .startActivity(
+                                        new Intent(
+                                                Intent.ACTION_VIEW,
+                                                Uri.parse(
+                                                        "https://play.google.com/store/apps/details?id=com.arr.bancamovil"))));
 
         return binding.getRoot();
-
     }
 
     @Override
@@ -63,8 +72,8 @@ public class AboutFragment extends Fragment {
                 .addMenuProvider(
                         new MenuProvider() {
                             @Override
-                            public void onCreateMenu(@NonNull Menu arg0, @NonNull MenuInflater arg1) {
-                            }
+                            public void onCreateMenu(
+                                    @NonNull Menu arg0, @NonNull MenuInflater arg1) {}
 
                             @Override
                             public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {

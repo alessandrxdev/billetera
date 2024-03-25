@@ -47,4 +47,9 @@
         <item>Manual</item>
     </string-array>
 
+    <string-array name="monedas_convert">
+        <item>EUR</item>
+        <item>USD</item>
+        <item>MLC</item>
+    </string-array>
 </resources>

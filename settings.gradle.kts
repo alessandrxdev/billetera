@@ -20,4 +20,3 @@ rootProject.name = "My Application"
 
 include(":app")
 include(":preferences")
-include(":apklis")

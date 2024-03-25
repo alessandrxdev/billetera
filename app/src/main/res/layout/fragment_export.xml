@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1.0"
-                android:text="Exportar" />
+                android:text="Copia de seguridad" />
 
         </LinearLayout>
 

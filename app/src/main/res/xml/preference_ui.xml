@@ -27,7 +27,6 @@
         app:title="Actualizar"
         app:dialogTitle="Tiempo"
         app:summary="Actualizar tasas de cambio automaticamente"
-        app:addText="Premium"
         app:entries="@array/update_entries"
         app:entryValues="@array/update_entries_value"
         app:defaultValue="0" />

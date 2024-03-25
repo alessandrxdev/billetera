@@ -9,6 +9,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import android.widget.Toast;
+import androidx.core.view.ActionProvider;
+import androidx.core.view.MenuItemCompat;
 import androidx.core.view.MenuProvider;
 import androidx.lifecycle.Lifecycle;
 import androidx.navigation.NavController;
@@ -116,23 +120,28 @@ public class EditCardFragment extends Fragment {
     }
 
     private boolean validateCardNumber(String tarjeta) {
-        boolean bpa = tarjeta.contains("12");
-        boolean bandec = tarjeta.contains("06");
-        boolean banmet = tarjeta.matches(".*74.*|.*95.*");
-
-        if (bpa) {
+        if (validateNumber(tarjeta, "12")) {
             binding.inputLayoutCard.setHelperText("BPA");
             return true;
-        } else if (bandec) {
+        } else if (validateNumber(tarjeta, "06")) {
             binding.inputLayoutCard.setHelperText("BANDEC");
             return true;
-        } else if (banmet) {
+        } else if (validateNumber(tarjeta, "74") || validateNumber(tarjeta, "95")) {
             binding.inputLayoutCard.setHelperText("BANMET");
             return true;
         } else {
             binding.inputLayoutCard.setHelperText("");
             return false;
         }
+    }
+
+    private boolean validateNumber(String tarjeta, String number) {
+        String[] grupos = tarjeta.split("(?<=\\G.{4})\\s+");
+        if (grupos.length >= 2) {
+            String segundoGrupo = grupos[1];
+            return segundoGrupo.startsWith(number);
+        }
+        return false;
     }
 
     private void addOptionMenu() {
@@ -145,12 +154,12 @@ public class EditCardFragment extends Fragment {
                                 menuInflater.inflate(R.menu.save_menu, menu);
                                 mMenu = menu;
                                 updateValidation();
-                                TextView text =
-                                        (TextView)
-                                                menu.findItem(R.id.save)
-                                                        .getActionView()
-                                                        .findViewById(R.id.save_card);
-                                text.setOnClickListener(
+
+                                MenuItem saveMenuItem = menu.findItem(R.id.save);
+                                View actionView = saveMenuItem.getActionView();
+                                TextView save = actionView.findViewById(R.id.save_card);
+
+                                save.setOnClickListener(
                                         new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {

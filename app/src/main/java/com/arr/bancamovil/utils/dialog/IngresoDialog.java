@@ -24,7 +24,6 @@ public class IngresoDialog extends BottomSheetDialog {
     private Button bPositive, bNegative;
     private TextView title;
 
-
     private Chip efectivo, banco, transferencia;
 
     private String chipSelect;
@@ -55,6 +54,11 @@ public class IngresoDialog extends BottomSheetDialog {
 
         // positive buttom
         bPositive = view.findViewById(R.id.b_positive);
+        bNegative = view.findViewById(R.id.b_negative);
+        bNegative.setOnClickListener(
+                v -> {
+                    dismiss();
+                });
 
         // title
         title = view.findViewById(R.id.title_dialog);

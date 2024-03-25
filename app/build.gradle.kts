@@ -11,8 +11,8 @@ android {
         applicationId = "com.arr.bancamovil"
         minSdk = 23
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0-beta"
+        versionCode = 4
+        versionName = "1.0.3-beta"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -75,5 +75,6 @@ dependencies {
     
     /* local projects */
     implementation(project(":preferences"))
-    implementation(project(":apklis"))
+    
+    implementation("com.github.applifycu:bugsend:1.0.4-alpha3")
 }

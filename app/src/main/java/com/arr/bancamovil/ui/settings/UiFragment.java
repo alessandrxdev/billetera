@@ -49,13 +49,6 @@ public class UiFragment extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preference_ui, rootKey);
 
-        // check pay apklis
-        ApklisUtils.PurchaseInfo purchaseInfo =
-                ApklisUtils.isPurchased(
-                        requireContext(),
-                        /* "com.filsa.SketchUi"*/ requireActivity().getPackageName());
-        System.out.println("Paid apklis: " + purchaseInfo);
-
         // mostrar tipo de tasa
         M3MultiSelectListPreference tasas = findPreference("monedas");
         assert tasas != null;
@@ -76,22 +69,6 @@ public class UiFragment extends PreferenceFragmentCompat {
 
         M3ListPreference update = findPreference("update_tasas");
         if (update != null) {
-
-            /*
-            update.setOnPreferenceClickListener(
-                    (preference) -> {
-                        if (purchaseInfo.isPaid()) {
-                            update.showDialog(true);
-                            update.setAddText(null);
-                        } else {
-                            update.showDialog(false);
-                            update.setAddText("Premium");
-                            showDialogPremium();
-                        }
-                        return true;
-                    });
-            */
-
             update.showDialog(true); // mostrar siempre el dialog
             update.setOnPreferenceChangeListener(
                     (preference, newValue) -> {

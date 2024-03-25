@@ -94,40 +94,26 @@ public class DataCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 view.binding.titular.setText(items.getUsuario());
 
                 // edit card
-                view.binding.getRoot().setOnLongClickListener(v -> {
-                    longListener.onLongClick(position);
-                    return true;
-                });
-
-                // copy card
                 view.binding
                         .getRoot()
-                        .setOnClickListener(
-                                v -> rootListener.onClick(position));
+                        .setOnLongClickListener(
+                                v -> {
+                                    longListener.onLongClick(position);
+                                    return true;
+                                });
+
+                // copy card
+                view.binding.getRoot().setOnClickListener(v -> rootListener.onClick(position));
             }
-        }  //
-
-    }
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    private Drawable background(String str) {
-        if (str.contains("12")) {
-            return mContext.getDrawable(R.drawable.gradient_bpa);
-        } else if (str.contains("06")) {
-            return mContext.getDrawable(R.drawable.gradient_bandec);
-        } else if (str.matches(".*74.*|.*95.*")) {
-            return mContext.getDrawable(R.drawable.gradient_banmet);
-        } else {
-            return mContext.getDrawable(R.drawable.gradient_none_card);
-        }
+        } //
     }
 
     private int logoBank(String str) {
-        if (str.contains("12")) {
+        if (validateCardNumber(str, "12")) {
             return R.drawable.logo_bpa;
-        } else if (str.contains("06")) {
+        } else if (validateCardNumber(str, "06")) {
             return R.drawable.logo_bandec;
-        } else if (str.matches(".*74.*|.*95.*")) {
+        } else if (validateCardNumber(str, "74") || validateCardNumber(str, "95")) {
             return R.drawable.logo_banmet;
         } else {
             return 0;
@@ -135,15 +121,33 @@ public class DataCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     private String getNameBank(String str) {
-        if (str.contains("12")) {
+        if (validateCardNumber(str, "12")) {
             return mContext.getString(R.string.name_bank_bpa);
-        } else if (str.contains("06")) {
+        } else if (validateCardNumber(str, "06")) {
             return mContext.getString(R.string.name_bank_bandec);
-        } else if (str.matches(".*74.*|.*95.*")) {
+        } else if (validateCardNumber(str, "74") || validateCardNumber(str, "95")) {
             return mContext.getString(R.string.name_bank_banmet);
         } else {
             return "";
         }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private Drawable background(String str) {
+        if (validateCardNumber(str, "12")) {
+            return mContext.getDrawable(R.drawable.gradient_bpa);
+        } else if (validateCardNumber(str, "06")) {
+            return mContext.getDrawable(R.drawable.gradient_bandec);
+        } else if (validateCardNumber(str, "74") || validateCardNumber(str, "95")) {
+            return mContext.getDrawable(R.drawable.gradient_banmet);
+        } else {
+            return mContext.getDrawable(R.drawable.gradient_none_card);
+        }
+    }
+
+    private boolean validateCardNumber(String str, String number) {
+        String tarjeta = str.replace(" ", "");
+        return tarjeta.matches("\\d{4}" + number + "\\d{4}\\d*");
     }
 
     @Override

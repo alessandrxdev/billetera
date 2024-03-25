@@ -65,8 +65,8 @@
                      android:text="@string/title_tasas_de_cambio" />
 
                 <ImageView
-                     android:layout_height="18dp"
-                     android:layout_width="18dp"
+                     android:layout_height="24dp"
+                     android:layout_width="24dp"
                      android:src="@drawable/ic_about_24px"
                      android:importantForAccessibility="no"
                      android:layout_alignParentEnd="true"

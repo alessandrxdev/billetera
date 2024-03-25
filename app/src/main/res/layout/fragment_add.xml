@@ -76,6 +76,7 @@
                 android:imeOptions="actionNext"
                 android:singleLine="true"
                 android:focusable="false"
+                android:contentDescription="@string/hint_moneda"
                 app:simpleItems="@array/moneda_items"
                 app:simpleItemSelectedColor="@color/colorSecondaryContainer"
                 android:focusableInTouchMode="false"

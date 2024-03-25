@@ -28,7 +28,7 @@
             <ImageButton
                  android:layout_height="48dp"
                  android:layout_width="48dp"
-                 android:contentDescription="no"
+                 android:importantForAccessibility="no"
                  android:background="?attr/selectableItemBackgroundBorderless"
                  android:layout_margin="5dp"
                  android:layout_weight="1"

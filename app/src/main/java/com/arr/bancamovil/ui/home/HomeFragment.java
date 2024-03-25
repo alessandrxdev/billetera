@@ -1,5 +1,7 @@
 package com.arr.bancamovil.ui.home;
 
+import android.content.Intent;
+import androidx.fragment.app.DialogFragment;
 import static com.arr.bancamovil.R.array.entries_value_default;
 
 import android.annotation.SuppressLint;
@@ -39,6 +41,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.arr.bancamovil.MainActivity;
 import com.arr.bancamovil.R;
+import com.arr.bancamovil.Test;
 import com.arr.bancamovil.adapter.DataCardAdapter;
 import com.arr.bancamovil.adapter.TasasAdapter;
 import com.arr.bancamovil.databinding.FragmentHomeBinding;
@@ -48,6 +51,7 @@ import com.arr.bancamovil.model.Items;
 import com.arr.bancamovil.model.Tasas;
 import com.arr.bancamovil.utils.asynck.ExecuteTask;
 import com.arr.bancamovil.utils.card.DataUtils;
+import com.arr.bancamovil.utils.dialog.ConvertDialog;
 import com.arr.bancamovil.utils.tasas.TasasUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -112,7 +116,8 @@ public class HomeFragment extends Fragment
 
         // logica para mostrar laa tasas de cambio
         tasas = new TasasUtils(requireContext());
-        tasasAdapter = new TasasAdapter(requireContext(), listTasas);
+        tasasAdapter = new TasasAdapter(requireContext(), listTasas, position -> onClick(position));
+
         binding.recycler.setHasFixedSize(true);
         binding.recycler.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.recycler.setAdapter(tasasAdapter);
@@ -188,12 +193,11 @@ public class HomeFragment extends Fragment
                                 menuInflater.inflate(R.menu.main_menu, menu);
                                 searchCard(menu); // search
 
+                                MenuItem saveMenuItem = menu.findItem(R.id.menu_add);
+                                View actionView = saveMenuItem.getActionView();
+
                                 // add cards
-                                ImageView add =
-                                        (ImageView)
-                                                menu.findItem(R.id.menu_add)
-                                                        .getActionView()
-                                                        .findViewById(R.id.add);
+                                ImageView add = actionView.findViewById(R.id.add);
                                 add.setOnClickListener(
                                         view ->
                                                 navigateTo()
@@ -493,5 +497,10 @@ public class HomeFragment extends Fragment
 
     private void onClickCalculate(View view) {
         navigateTo().navigate(R.id.navigation_calculate, null, options());
+    }
+
+    private void onClick(int position) {
+        DialogFragment dialog = new ConvertDialog();
+        dialog.show(requireActivity().getSupportFragmentManager(), null);
     }
 }

@@ -23,7 +23,6 @@ import com.arr.bancamovil.databinding.FragmentAddBinding;
 import com.arr.bancamovil.utils.card.DataUtils;
 import com.arr.bancamovil.utils.dialog.NumberPickerDialog;
 
-
 public class AddCardFragment extends Fragment {
 
     private FragmentAddBinding binding;
@@ -98,23 +97,28 @@ public class AddCardFragment extends Fragment {
     }
 
     private boolean validateCardNumber(String tarjeta) {
-        boolean bpa = tarjeta.contains("12");
-        boolean bandec = tarjeta.contains("06");
-        boolean banmet = tarjeta.matches(".*74.*|.*95.*");
-
-        if (bpa) {
+        if (validateNumber(tarjeta, "12")) {
             binding.inputLayoutCard.setHelperText("BPA");
             return true;
-        } else if (bandec) {
+        } else if (validateNumber(tarjeta, "06")) {
             binding.inputLayoutCard.setHelperText("BANDEC");
             return true;
-        } else if (banmet) {
+        } else if (validateNumber(tarjeta, "74") || validateNumber(tarjeta, "95")) {
             binding.inputLayoutCard.setHelperText("BANMET");
             return true;
         } else {
             binding.inputLayoutCard.setHelperText("");
             return false;
         }
+    }
+
+    private boolean validateNumber(String tarjeta, String number) {
+        String[] grupos = tarjeta.split("(?<=\\G.{4})\\s+");
+        if (grupos.length >= 2) {
+            String segundoGrupo = grupos[1];
+            return segundoGrupo.startsWith(number);
+        }
+        return false;
     }
 
     private void addOptionMenu() {

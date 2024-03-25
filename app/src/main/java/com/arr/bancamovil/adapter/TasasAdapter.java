@@ -20,10 +20,12 @@ public class TasasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private Context mContext;
 
     private static final int VIEW_EMPTY = 2;
+    private OnClickListener mListener;
 
-    public TasasAdapter(Context context, List<Items> list) {
+    public TasasAdapter(Context context, List<Items> list, OnClickListener listener) {
         this.mContext = context;
         this.mList = list;
+        this.mListener = listener;
     }
 
     @Override
@@ -70,6 +72,10 @@ public class TasasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             if (money != null) {
                 view.binding.oneMoney.setText(money);
             }
+
+            view.binding.getRoot().setOnClickListener(v -> mListener.onClick(position));
+            
+            
         } else if (holder instanceof HeaderView) {
             Header header = (Header) mList.get(position);
             HeaderView view = (HeaderView) holder;
@@ -131,6 +137,10 @@ public class TasasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public int getItemViewType(int position) {
         return mList.get(position).itemViewType();
+    }
+
+    public interface OnClickListener {
+        void onClick(int position);
     }
 
     class TasasView extends RecyclerView.ViewHolder {

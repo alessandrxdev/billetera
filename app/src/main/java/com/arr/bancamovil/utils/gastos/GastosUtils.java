@@ -66,7 +66,7 @@ public class GastosUtils {
                 if (data.has("category")) {
                     categoria = data.getString("category");
                 }
-                list.add(0, new Market(categoria, cantidad + " CUP"));
+                list.add(new Market(categoria, cantidad + " CUP"));
             }
         } catch (Exception err) {
             err.printStackTrace();
@@ -191,6 +191,54 @@ public class GastosUtils {
             } else {
                 showMessage("¡Datos no eliminados!");
             }
+        }
+    }
+
+    public void deleteItem(int position) {
+        try {
+            JSONObject result = new JSONObject();
+            JSONObject myGasto = new JSONObject();
+            JSONObject data = new JSONObject();
+
+            // Leer el archivo JSON existente
+            JSONArray jsonArray = jsonArray();
+
+            // Crear un nuevo JSONArray sin el elemento a eliminar
+            JSONArray newJsonArray = new JSONArray();
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject item = jsonArray.getJSONObject(i);
+                int id = item.optInt("id");
+                if (id != position) {
+                    newJsonArray.put(item);
+                }
+            }
+
+            // Verificar si hay campos adicionales en el objeto "data"
+            JSONObject existingData = jsonArray.getJSONObject(0);
+            if (existingData.has("total")) {
+                String total = existingData.getString("total");
+                data.put("total", total);
+            }
+            if (existingData.has("gasto")) {
+                String gasto = existingData.getString("gasto");
+                data.put("gasto", gasto);
+            }
+            if (existingData.has("ingreso")) {
+                String ingreso = existingData.getString("ingreso");
+                data.put("ingreso", ingreso);
+            }
+
+            // Actualizar el JSONArray "bill" en el objeto "data"
+            data.put("bill", newJsonArray);
+
+            // Crear el objeto JSON final
+            myGasto.put("data", data);
+            result.put("CUP", myGasto);
+
+            // Guardar el nuevo objeto JSON en el archivo
+            saveFile(result);
+        } catch (Exception err) {
+            err.printStackTrace();
         }
     }
 

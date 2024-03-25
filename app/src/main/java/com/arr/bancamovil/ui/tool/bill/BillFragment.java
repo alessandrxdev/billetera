@@ -20,6 +20,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.arr.bancamovil.R;
@@ -29,6 +30,7 @@ import com.arr.bancamovil.model.Market;
 import com.arr.bancamovil.utils.dialog.GastosDialog;
 import com.arr.bancamovil.utils.dialog.IngresoDialog;
 import com.arr.bancamovil.utils.gastos.GastosUtils;
+import com.arr.bancamovil.utils.gastos.listeners.SwipeCallback;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -61,6 +63,13 @@ public class BillFragment extends Fragment {
         adapter = new MarketAdapter(requireContext(), utils.getList());
         binding.recyclerMarket.setAdapter(adapter);
         binding.recyclerMarket.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        // swipe
+        SwipeCallback callback =
+                new SwipeCallback(
+                        requireContext(), adapter, position -> utils.deleteItem(position));
+        ItemTouchHelper touch = new ItemTouchHelper(callback);
+        touch.attachToRecyclerView(binding.recyclerMarket);
 
         // ingesos and gastos
         binding.ingresos.setOnClickListener(this::onSaveIngreso);
