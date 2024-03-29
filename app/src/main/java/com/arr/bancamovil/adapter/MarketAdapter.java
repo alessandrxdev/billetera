@@ -6,11 +6,13 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import com.arr.bancamovil.R;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arr.bancamovil.databinding.LayoutItemsViewMarketBinding;
 import com.arr.bancamovil.databinding.LayoutViewMarketEmptyBinding;
 import com.arr.bancamovil.model.Market;
+import com.arr.bancamovil.utils.bills.BillsData;
 import com.arr.bancamovil.utils.gastos.GastosUtils;
 import java.util.List;
 
@@ -22,12 +24,12 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private static final int VIEW_EMPTY = 0;
     private static final int VIEW_MARKET = 1;
 
-    private GastosUtils gastos;
+    private BillsData data;
 
     public MarketAdapter(Context context, List<Market> newList) {
         this.mContext = context;
         this.mList = newList;
-        gastos = new GastosUtils(mContext);
+        data = new BillsData(mContext);
     }
 
     public void updateList(List<Market> list) {
@@ -70,10 +72,7 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 view.binding.card.setCardBackgroundColor(colorCat);
             }
 
-            String type = gastos.getStringArray("type", position);
-
-            Log.e("TYPE ", "" + type);
-
+            String type = data.getStringArray("type", position);
             if (type != null) {
                 Drawable ic = getIconType(type);
                 if (ic != null) {
@@ -174,13 +173,17 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
     }
 
-    class MarketView extends RecyclerView.ViewHolder {
+    public static class MarketView extends RecyclerView.ViewHolder {
 
         private LayoutItemsViewMarketBinding binding;
 
         public MarketView(LayoutItemsViewMarketBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+        }
+
+        public ImageView getDeleteIcon() {
+            return binding.delete;
         }
     }
 

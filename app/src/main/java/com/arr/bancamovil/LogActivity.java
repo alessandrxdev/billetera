@@ -40,7 +40,7 @@ public class LogActivity extends AppCompatActivity {
     private void shareLogFile(String log) {
         try {
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"alessrodriguez98@gmail.com"});
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"applifycu@proton.me"});
             intent.putExtra(Intent.EXTRA_SUBJECT, "BM/REPORT");
             intent.putExtra(Intent.EXTRA_TEXT, log);
             intent.setType("text/plain");

@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -30,7 +29,7 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
-import com.arr.apklislib.ApklisUtils;
+
 import com.arr.bancamovil.R;
 import com.arr.bancamovil.utils.dialog.PremiumDialog;
 import com.arr.bancamovil.utils.theme.ThemeApp;

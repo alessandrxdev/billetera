@@ -8,6 +8,8 @@ import android.widget.Toast;
 import com.arr.bancamovil.adapter.MarketAdapter;
 import com.arr.bancamovil.model.Market;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -196,47 +198,39 @@ public class GastosUtils {
 
     public void deleteItem(int position) {
         try {
-            JSONObject result = new JSONObject();
-            JSONObject myGasto = new JSONObject();
-            JSONObject data = new JSONObject();
+            JSONObject mainObject = getJsonObject();
+            JSONObject cupDataObject = mainObject.getJSONObject("CUP").getJSONObject("data");
 
-            // Leer el archivo JSON existente
-            JSONArray jsonArray = jsonArray();
+            JSONArray billArray = cupDataObject.getJSONArray("bill");
+            JSONArray updatedBillArray = new JSONArray();
 
-            // Crear un nuevo JSONArray sin el elemento a eliminar
-            JSONArray newJsonArray = new JSONArray();
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject item = jsonArray.getJSONObject(i);
-                int id = item.optInt("id");
-                if (id != position) {
-                    newJsonArray.put(item);
+            for (int i = 0; i < billArray.length(); ++i) {
+                JSONObject billObject = billArray.getJSONObject(i);
+                int id = billObject.getInt("id");
+
+                if (id == position) {
+                    // Eliminar este objeto del array
+                    continue;
                 }
+
+                if (id > position) {
+                    // Actualizar el campo id de los elementos siguientes si es necesario
+                    billObject.put("id", id - 1);
+                }
+
+                updatedBillArray.put(billObject);
             }
 
-            // Verificar si hay campos adicionales en el objeto "data"
-            JSONObject existingData = jsonArray.getJSONObject(0);
-            if (existingData.has("total")) {
-                String total = existingData.getString("total");
-                data.put("total", total);
-            }
-            if (existingData.has("gasto")) {
-                String gasto = existingData.getString("gasto");
-                data.put("gasto", gasto);
-            }
-            if (existingData.has("ingreso")) {
-                String ingreso = existingData.getString("ingreso");
-                data.put("ingreso", ingreso);
-            }
+            cupDataObject.put("bill", updatedBillArray); // Actualizar el array de bill
 
-            // Actualizar el JSONArray "bill" en el objeto "data"
-            data.put("bill", newJsonArray);
+            // Actualizar el objeto JSON principal con el nuevo array bill
+            mainObject.getJSONObject("CUP").put("data", cupDataObject);
 
-            // Crear el objeto JSON final
-            myGasto.put("data", data);
-            result.put("CUP", myGasto);
+            // Guardar los datos actualizados en el archivo
+            FileOutputStream file = new FileOutputStream(fileDirectory());
+            file.write(mainObject.toString().getBytes());
+            file.close();
 
-            // Guardar el nuevo objeto JSON en el archivo
-            saveFile(result);
         } catch (Exception err) {
             err.printStackTrace();
         }
@@ -251,6 +245,29 @@ public class GastosUtils {
         } catch (Exception err) {
             err.printStackTrace();
         }
+    }
+
+    // Método para obtener el JSONObject a partir de un archivo
+    private JSONObject getJsonObject() {
+        StringBuilder content = new StringBuilder();
+
+        try {
+            File file = fileDirectory();
+            if (file != null) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    content.append(line);
+                }
+                reader.close();
+                // Convertir el contenido del archivo a un JSONObject
+                return new JSONObject(content.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     // file directory
