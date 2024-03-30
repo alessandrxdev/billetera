@@ -14,6 +14,7 @@ import com.arr.bancamovil.databinding.LayoutViewMarketEmptyBinding;
 import com.arr.bancamovil.model.Market;
 import com.arr.bancamovil.utils.bills.BillsData;
 import com.arr.bancamovil.utils.gastos.GastosUtils;
+import com.tooltip.OnClickListener;
 import java.util.List;
 
 public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -26,9 +27,12 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private BillsData data;
 
-    public MarketAdapter(Context context, List<Market> newList) {
+    private OnClickListener mListener;
+
+    public MarketAdapter(Context context, List<Market> newList, OnClickListener listener) {
         this.mContext = context;
         this.mList = newList;
+        this.mListener = listener;
         data = new BillsData(mContext);
     }
 
@@ -60,6 +64,7 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             view.binding.monto.setText(model.getSaldo());
             view.binding.categoria.setText(model.getTipo());
+            view.binding.date.setText(model.getDate());
 
             // icon categoria
             Drawable iconCategory = getIconCategory(model.getTipo());
@@ -83,6 +88,8 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     view.binding.icon.setColorFilter(bg);
                 }
             }
+
+            view.binding.item.setOnClickListener(v -> mListener.onClick(position));
         }
     }
 
@@ -171,6 +178,10 @@ public class MarketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         } else {
             return VIEW_MARKET;
         }
+    }
+
+    public interface OnClickListener {
+        void onClick(int position);
     }
 
     public static class MarketView extends RecyclerView.ViewHolder {

@@ -1,9 +1,7 @@
 package com.arr.bancamovil.ui.tool.bill;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,12 +27,13 @@ import com.arr.bancamovil.adapter.MarketAdapter;
 import com.arr.bancamovil.databinding.FragmentBillBinding;
 import com.arr.bancamovil.model.Market;
 import com.arr.bancamovil.utils.bills.BillsData;
-import com.arr.bancamovil.utils.dialog.GastosDialog;
-import com.arr.bancamovil.utils.dialog.IngresoDialog;
+
+import com.arr.bancamovil.utils.dialog.bills.DialogInfo;
+import com.arr.bancamovil.utils.dialog.bills.GastosDialog;
+import com.arr.bancamovil.utils.dialog.bills.IngresosDialog;
 import com.arr.bancamovil.utils.gastos.GastosUtils;
 import com.arr.bancamovil.utils.gastos.listeners.SwipeCallback;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.tooltip.Tooltip;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -67,7 +66,9 @@ public class BillFragment extends Fragment {
         data = new BillsData(requireContext());
 
         binding.recyclerMarket.setHasFixedSize(true);
-        adapter = new MarketAdapter(requireContext(), data.getList());
+        adapter =
+                new MarketAdapter(
+                        requireContext(), data.getList(), position -> onClickItemsView(position));
         binding.recyclerMarket.setAdapter(adapter);
         binding.recyclerMarket.setLayoutManager(new LinearLayoutManager(requireContext()));
 
@@ -95,7 +96,7 @@ public class BillFragment extends Fragment {
             binding.textIngresos.setText("0.00 CUP");
         }
 
-        if (getTotal() != null) {
+        if (getTotal() != null && !getTotal().isEmpty()) {
             binding.saldoTotal.setText(getTotal());
 
             double total = data.getData("saldo");
@@ -112,44 +113,44 @@ public class BillFragment extends Fragment {
 
         } else {
             binding.saldoTotal.setText("0.00");
-            binding.textRecomendado.setText("");
         }
+        
 
         return binding.getRoot();
     }
 
     private void onSaveIngreso(View view) {
-        IngresoDialog dialog = new IngresoDialog(requireContext());
-        dialog.setTitle("Ingreso");
+        IngresosDialog dialog = new IngresosDialog();
         dialog.setPositiveButtom(
-                (v -> {
-                    String textEditText = dialog.getTextEditText();
-                    String chipSelected = dialog.getChipSelected();
-
-                    if (!TextUtils.isEmpty(textEditText) && !TextUtils.isEmpty(chipSelected)) {
-                        setIngresos(textEditText, chipSelected);
+                v -> {
+                    String cantidad = dialog.getTextEditText();
+                    String chips = dialog.getChipsSelect();
+                    String date = dialog.getDate();
+                    String description = dialog.getDescription();
+                    if (!TextUtils.isEmpty(cantidad) && !TextUtils.isEmpty(chips)) {
+                        setIngresos(cantidad, chips, description, date);
                     } else {
-                        showToast("No deje la categoría o monto en blanco");
+                        showToast("No deje campos vacíos");
                     }
-                }));
-        dialog.show();
+                });
+        dialog.show(requireActivity().getSupportFragmentManager(), null);
     }
 
     private void onSaveGastos(View view) {
-        GastosDialog dialog = new GastosDialog(requireContext());
-        dialog.setTitle("Gastos");
-        dialog.setPsitiveButtom(
-                (v -> {
-                    String textEditText = dialog.getTextEditText();
-                    String chipSelected = dialog.getChipSelected();
-
-                    if (!TextUtils.isEmpty(textEditText) && !TextUtils.isEmpty(chipSelected)) {
-                        insertGastos(textEditText, chipSelected);
+        GastosDialog dialog = new GastosDialog();
+        dialog.setPositiveButtom(
+                v -> {
+                    String cantidad = dialog.getTextEditText();
+                    String chips = dialog.getChipsSelect();
+                    String date = dialog.getDate();
+                    String description = dialog.getDescription();
+                    if (!TextUtils.isEmpty(cantidad) && !TextUtils.isEmpty(chips)) {
+                        setGastos(cantidad, chips, description, date);
                     } else {
-                        showToast("No deje la categoría o monto en blanco");
+                        showToast("No deje campos vacíos");
                     }
-                }));
-        dialog.show();
+                });
+        dialog.show(requireActivity().getSupportFragmentManager(), null);
     }
 
     /*
@@ -157,7 +158,7 @@ public class BillFragment extends Fragment {
 
     */
 
-    private void setIngresos(String strMonto, String category) {
+    private void setIngresos(String strMonto, String category, String description, String fecha) {
         double monto = Double.parseDouble(strMonto);
         double saldo = data.getData("saldo");
         double ingreso = data.getData("ingreso");
@@ -178,7 +179,37 @@ public class BillFragment extends Fragment {
                 String.valueOf(gastos),
                 strMonto,
                 category,
-                "income");
+                "income",
+                fecha,
+                description);
+        adapter.updateList(data.getList());
+    }
+
+    private void setGastos(String strMonto, String category, String description, String fecha) {
+        double monto = Double.parseDouble(strMonto);
+        double saldo = data.getData("saldo");
+        double ingreso = data.getData("ingreso");
+        double gastos = data.getData("gasto");
+
+        // resta el saldo total con el monto insertado
+        double restaSaldo = saldo - monto;
+        binding.saldoTotal.setText(String.valueOf(restaSaldo));
+
+        // sumar el monto con el gasto total
+        double sumaGasto = gastos + monto;
+        binding.textGastos.setText(String.valueOf(sumaGasto));
+
+        // save data
+        data.save(
+                String.valueOf(restaSaldo),
+                String.valueOf(ingreso),
+                String.valueOf(sumaGasto),
+                strMonto,
+                category,
+                "bill",
+                fecha,
+                description);
+
         adapter.updateList(data.getList());
     }
 
@@ -204,6 +235,7 @@ public class BillFragment extends Fragment {
         String type = data.getArrayDelete("type", position);
         double saldo = data.getData("saldo");
         double ingreso = data.getData("ingreso");
+        double gasto = data.getData("gasto");
 
         if (type.equals("income")) {
             String monto = data.getArrayDelete("monto", position);
@@ -222,16 +254,36 @@ public class BillFragment extends Fragment {
                     null,
                     null,
                     null,
+                    null,
+                    null,
                     null);
-        } else if (type.equals("bills")) {
-            // Aquí puedes agregar la lógica para el caso cuando el tipo es "bills"
-            // Por ejemplo, puedes realizar operaciones específicas si es una factura
-            // Por ahora, he dejado este bloque vacío, debes completarlo con la lógica adecuada
+        }
+        if (type.equals("bill")) {
+            String monto = data.getArrayDelete("monto", position);
+            double doubleMonto = Double.parseDouble(monto);
+
+            double sumaSaldo = saldo + doubleMonto;
+            double restaGasto = gasto - doubleMonto;
+
+            binding.saldoTotal.setText(String.valueOf(sumaSaldo));
+            binding.textGastos.setText(String.valueOf(restaGasto));
+
+            data.deleteItem(position);
+            data.save(
+                    String.valueOf(sumaSaldo),
+                    null,
+                    String.valueOf(restaGasto),
+                    null,
+                    null,
+                    null,
+                    null,
+                    null);
         }
 
         adapter.updateList(data.getList());
     }
 
+    /*
     private void insertIngreso(String monto, String category) {
         double newMonto = Double.parseDouble(monto);
         String mTotal = getTotal();
@@ -279,6 +331,8 @@ public class BillFragment extends Fragment {
         adapter.updateList(utils.getList());
     }
 
+    */
+
     private void insertGastos(String monto, String category) {
         adapter.notifyDataSetChanged();
         double newMonto = Double.parseDouble(monto);
@@ -320,8 +374,8 @@ public class BillFragment extends Fragment {
     }
 
     private void deleteData() {
-        utils.delete();
-        adapter.updateList(utils.getList());
+        data.delete();
+        adapter.updateList(data.getList());
         binding.textGastos.setText("0.00 CUP");
         binding.textIngresos.setText("0.00 CUP");
         binding.saldoTotal.setText("0.00");
@@ -342,10 +396,7 @@ public class BillFragment extends Fragment {
                                                 menu.findItem(R.id.menu_delete)
                                                         .getActionView()
                                                         .findViewById(R.id.delete);
-                                delete.setOnClickListener(
-                                        view -> {
-                                            deleteData();
-                                        });
+                                delete.setOnClickListener(view -> deleteData());
                             }
 
                             @Override
@@ -416,5 +467,14 @@ public class BillFragment extends Fragment {
         cal.add(Calendar.MONTH, 1);
         cal.add(Calendar.DAY_OF_MONTH, -1);
         return (double) cal.get(Calendar.DAY_OF_MONTH);
+    }
+
+    private void onClickItemsView(int position) {
+        String monto = data.getStringArray("monto", position);
+        String description = data.getStringArray("note", position);
+        if (description.isEmpty()) {
+            description = "No hay nota agregada";
+        }
+        new DialogInfo(requireContext()).setMonto(monto + " CUP").setNote(description).show();
     }
 }

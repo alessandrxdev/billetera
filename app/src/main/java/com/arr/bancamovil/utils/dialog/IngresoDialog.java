@@ -59,6 +59,8 @@ public class IngresoDialog extends BottomSheetDialog {
                 v -> {
                     dismiss();
                 });
+        
+        
 
         // title
         title = view.findViewById(R.id.title_dialog);

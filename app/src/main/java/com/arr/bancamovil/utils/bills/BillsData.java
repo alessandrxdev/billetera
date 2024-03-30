@@ -2,6 +2,7 @@ package com.arr.bancamovil.utils.bills;
 
 import android.content.Context;
 import android.os.Environment;
+import android.widget.Toast;
 import com.arr.bancamovil.model.Market;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +20,7 @@ public class BillsData {
 
     private Context mContext;
     private static final String FILE_NAME = "bills.db";
-    private String saldo, ingreso, gasto, monto, category, type;
+    private String saldo, ingreso, gasto, monto, category, type, fecha, description;
 
     private List<Market> list = new ArrayList<>();
 
@@ -33,13 +34,17 @@ public class BillsData {
             String gasto,
             String monto,
             String category,
-            String type) {
+            String type,
+            String date,
+            String note) {
         this.saldo = saldo;
         this.ingreso = ingreso;
         this.gasto = gasto;
         this.monto = monto;
         this.category = category;
         this.type = type;
+        this.fecha = date;
+        this.description = note;
         saveFileData();
     }
 
@@ -84,6 +89,12 @@ public class BillsData {
             if (type != null) {
                 bill.put("type", type);
             }
+            if (fecha != null) {
+                bill.put("date", fecha);
+            }
+            if (description != null) {
+                bill.put("note", description);
+            }
 
             // Comprobar si el objeto "bill" contiene al menos un campo no null
             if (bill.length() > 0) {
@@ -115,7 +126,11 @@ public class BillsData {
             for (int i = 0; i < array.length(); ++i) {
                 JSONObject data = array.getJSONObject(i);
                 if (data.has("monto") || data.has("category")) {
-                    list.add(new Market(data.getString("category"), data.getString("monto")));
+                    list.add(
+                            new Market(
+                                    data.getString("category"),
+                                    data.getString("monto"),
+                                    data.getString("date")));
                 }
             }
         } catch (Exception e) {
@@ -143,6 +158,18 @@ public class BillsData {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void delete() {
+        File file = fileDirectory();
+        if (file != null && file.exists()) {
+            boolean deleted = file.delete();
+            if (deleted) {
+                showMessage("¡Datos eliminados!");
+            } else {
+                showMessage("¡Datos no eliminados!");
+            }
         }
     }
 
@@ -260,5 +287,9 @@ public class BillsData {
             return new File(file, FILE_NAME);
         }
         return null;
+    }
+
+    private void showMessage(String message) {
+        Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
     }
 }

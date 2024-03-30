@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:padding="16dp"
+     android:orientation="vertical">
+
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+         android:layout_height="wrap_content"
+         android:layout_width="150dp"
+         android:layout_gravity="center_horizontal" />
+
+    <ImageView
+         android:layout_height="25dp"
+         android:layout_width="25dp"
+         android:src="@drawable/ic_money_24px"
+         android:layout_gravity="center_horizontal" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textAppearance="?textAppearanceHeadlineSmall"
+         android:id="@+id/monto"
+         android:layout_gravity="center_horizontal"
+         android:textStyle="bold" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textAppearance="?textAppearanceBodyLarge"
+         android:layout_marginTop="20dp"
+         android:text="Nota"
+         android:textStyle="bold" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textAppearance="?textAppearanceBodySmall"
+         android:id="@+id/description" />
+
+</LinearLayout>

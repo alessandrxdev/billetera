@@ -39,6 +39,9 @@
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
 
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_arrow</item>
+        <item name="homeAsUpIndicator">@drawable/ic_back_arrow</item>
+    
         <!-- lockscreen style -->
         <item name="pf_lock_screen">@style/LockScreenStyle</item>
         <item name="pf_key_button">@style/LockScreenButtonStyle</item>
@@ -58,10 +61,7 @@
     <style name="AppTheme.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
         <!-- Radius of the outer bound of widgets to make the rounded corners -->
         <item name="appWidgetRadius">16dp</item>
-        <!--
-        Radius of the inner view's bound of widgets to make the rounded corners.
-        It needs to be 8dp or less than the value of appWidgetRadius
-        -->
+        <!-- Radius of the inner view's bound of widgets to make the rounded corners. It needs to be 8dp or less than the value of appWidgetRadius -->
         <item name="appWidgetInnerRadius">8dp</item>
     </style>
 

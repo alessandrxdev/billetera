@@ -17,7 +17,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
-
 import com.arr.bancamovil.broadcast.SmsReceiver;
 import com.arr.bancamovil.databinding.ActivityMainBinding;
 import com.arr.bugsend.BugSend;
@@ -70,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                             || id == R.id.navigation_about) {
                         binding.navView.setVisibility(View.GONE);
                         getWindow().setNavigationBarColor(getColor(R.color.colorBackground));
+                        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back_arrow);
+                        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                     } else {
                         binding.navView.setVisibility(View.VISIBLE);
                         getWindow().setNavigationBarColor(getColor(R.color.colorSurface));

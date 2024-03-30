@@ -37,8 +37,12 @@ public class ConvertDialog extends DialogFragment {
 
     private String[] moneda = {"USD", "EUR", "MLC"};
     private int[] icon = {
-        R.drawable.ic_flag_usa_56dp, R.drawable.ic_flag_europe_56dp, R.drawable.ic_credit_cards
+        R.drawable.ic_flag_usa_56dp,
+        R.drawable.ic_flag_europe_56dp,
+        R.drawable.ic_credit_card_mlc_56dp
     };
+
+    private int defaultCurrencyPosition;
 
     private String[] moneda2 = {"CUP"};
     private int[] icon2 = {R.drawable.ic_flag_cuba_56dp};
@@ -61,6 +65,7 @@ public class ConvertDialog extends DialogFragment {
         AppCompatSpinner spinner = view.findViewById(R.id.spinner);
         adapter = new ConvertAdapter(requireContext(), icon, moneda);
         spinner.setAdapter(adapter);
+        spinner.setSelection(defaultCurrencyPosition);
 
         spinner.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
@@ -151,9 +156,27 @@ public class ConvertDialog extends DialogFragment {
         return dialog;
     }
 
+    public ConvertDialog setCurrency(String currency) {
+        if (currency != null) {
+            for (int i = 0; i < moneda.length; i++) {
+                if (moneda[i].equals(currency)) {
+                    defaultCurrencyPosition = i;
+                    break;
+                }
+            }
+            selectedCurrency = currency;
+        }
+        return this;
+    }
+
     private void updateMessage() {
         if (selectedCurrency != null) {
-            message.setText("1 CUP = " + getBuyMoneda(selectedCurrency) + " " + selectedCurrency +" al tipo de cambio del mercado informal.");
+            message.setText(
+                    "1 CUP = "
+                            + getBuyMoneda(selectedCurrency)
+                            + " "
+                            + selectedCurrency
+                            + " al tipo de cambio del mercado informal.");
         } else {
             message.setText("Error: Moneda no seleccionada");
         }

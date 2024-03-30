@@ -55,7 +55,6 @@ public class UiFragment extends PreferenceFragmentCompat {
 
         // tema
         M3ListPreference tema = findPreference("tema");
-        tema.showDialog(true);
         assert tema != null;
         if (tema.getValue() == null) {
             tema.setValue(ThemeApp.Mode.system.name());
@@ -68,7 +67,6 @@ public class UiFragment extends PreferenceFragmentCompat {
 
         M3ListPreference update = findPreference("update_tasas");
         if (update != null) {
-            update.showDialog(true); // mostrar siempre el dialog
             update.setOnPreferenceChangeListener(
                     (preference, newValue) -> {
                         if (newValue.equals("0")) {

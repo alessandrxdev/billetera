@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#9CF96D</color>
+    <color name="colorPrimary">#43A047</color>
     <color name="colorOnPrimary">#FFF</color>
-    <color name="colorPrimaryContainer">#1F5108</color>
-    <color name="colorOnPrimaryContainer">#9CF96D</color>
+    <color name="colorPrimaryContainer">#C8E6C9</color>
+    <color name="colorOnPrimaryContainer">#43A047</color>
 
     <!-- Secondary color -->
-    <color name="colorSecondary">#BCCBB0</color>
+    <color name="colorSecondary">#43A047</color>
     <color name="colorOnSecondary">#273421</color>
     <color name="colorSecondaryContainer">#383838</color>
-    <color name="colorOnSecondaryContainer">#9CF96D</color>
+    <color name="colorOnSecondaryContainer">#43A047</color>
 
 
     <color name="colorTertiary">#DCBCE1</color>
@@ -25,7 +25,7 @@
     <color name="colorOnBackground">#E3E2E6</color>
 
     <!-- Surface -->
-    <color name="colorSurface">#212121</color>
+    <color name="colorSurface">#121212</color>
     <color name="colorOnSurface">#E3E2E6</color>
     <color name="colorSurfaceVariant">#44474E</color>
     <color name="colorOnSurfaceVariant">#C8C5D0</color>

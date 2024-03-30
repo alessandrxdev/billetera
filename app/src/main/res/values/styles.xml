@@ -97,7 +97,7 @@
         <item name="shapeAppearance">?attr/shapeAppearanceCornerSmall</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Material3.Chip</item>
         <item name="chipSurfaceColor">?attr/colorSurface</item>
-        <item name="chipBackgroundColor">@color/colorBackground</item>
+        <item name="chipBackgroundColor">@color/colorSurfaceVariant</item>
         <item name="chipStrokeWidth">0dp</item>
         <item name="chipStrokeColor">@android:color/transparent</item>
         <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.Chip</item>

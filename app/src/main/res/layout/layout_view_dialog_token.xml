@@ -1,66 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
-     android:layout_height="wrap_content"
-     android:layout_width="match_parent"
-     android:layout_margin="16dp"
-     android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
 
     <ImageView
-         android:layout_height="35dp"
-         android:layout_width="35dp"
-         android:src="@drawable/ic_security_24px"
-         android:layout_marginTop="16dp"
-         android:layout_gravity="center_horizontal" />
+        android:layout_height="45dp"
+        android:layout_width="45dp"
+        android:src="@drawable/ic_token"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
-         android:layout_height="wrap_content"
-         android:layout_width="match_parent"
-         android:gravity="center_horizontal"
-         android:textAppearance="?textAppearanceBodyMedium"
-         android:layout_margin="16dp"
-         android:id="@+id/message"
-         android:text="@string/message_token" />
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:textAppearance="?textAppearanceBodyMedium"
+        android:layout_margin="16dp"
+        android:id="@+id/message"
+        android:text="@string/message_token" />
 
     <com.google.android.material.card.MaterialCardView
-         android:layout_height="wrap_content"
-         android:layout_width="match_parent"
-         android:layout_marginBottom="20dp"
-         android:clickable="true"
-         app:strokeWidth="0dp"
-         android:layout_marginLeft="16dp"
-         android:layout_marginRight="16dp"
-         app:cardBackgroundColor="@android:color/transparent"
-         android:layout_marginTop="10dp"
-         app:cardCornerRadius="20dp"
-         android:id="@+id/copy_token">
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        app:strokeWidth="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="20dp"
+        android:id="@+id/copy_token">
 
         <LinearLayout
-             android:layout_height="wrap_content"
-             android:layout_width="match_parent"
-             android:gravity="center_vertical"
-             android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
             <TextView
-                 android:layout_height="wrap_content"
-                 android:layout_width="match_parent"
-                 android:gravity="center_horizontal"
-                 android:background="@drawable/bg_tips"
-                 android:textAppearance="?textAppearanceBodySmall"
-                 android:padding="6dp"
-                 android:id="@+id/text_token" />
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:background="@drawable/bg_tips"
+                android:textAppearance="?textAppearanceBodySmall"
+                android:padding="6dp"
+                android:id="@+id/text_token" />
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
-         android:layout_height="55dp"
-         android:layout_width="match_parent"
-         android:layout_margin="15dp"
-         app:cornerRadius="10dp"
-         android:id="@+id/update_token"
-         android:text="Nuevo Token" />
+        android:layout_height="56dp"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        app:cornerRadius="10dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/update_token"
+        android:text="Generar token" />
 
 </LinearLayout>

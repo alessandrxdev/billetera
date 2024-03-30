@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#086972</color>
+    <color name="colorPrimary">#43A047</color>
     <color name="colorOnPrimary">#000</color>
-    <color name="colorPrimaryContainer">#086972</color>
-    <color name="colorOnPrimaryContainer">#062100</color>
+    <color name="colorPrimaryContainer">#C8E6C9</color>
+    <color name="colorOnPrimaryContainer">#43A047</color>
 
     <!-- secondary -->
-    <color name="colorSecondary">#55624C</color>
+    <color name="colorSecondary">#43A047</color>
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorSecondaryContainer">#D0D0D0</color> <!-- item selected color -->
-    <color name="colorOnSecondaryContainer">#086972</color> <!-- color icon select bottom navBar -->
+    <color name="colorOnSecondaryContainer">#43A047</color> <!-- color icon select bottom navBar -->
 
 
     <color name="colorTertiary">#416277</color>

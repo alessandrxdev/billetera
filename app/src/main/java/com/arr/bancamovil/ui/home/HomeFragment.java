@@ -500,7 +500,10 @@ public class HomeFragment extends Fragment
     }
 
     private void onClick(int position) {
-        DialogFragment dialog = new ConvertDialog();
+        Tasas tasas = (Tasas) listTasas.get(position);
+        String moneda = tasas.getMoneda();
+        ConvertDialog dialog = new ConvertDialog();
+        dialog.setCurrency(moneda);
         dialog.show(requireActivity().getSupportFragmentManager(), null);
     }
 }

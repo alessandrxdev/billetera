@@ -68,7 +68,7 @@ public class GastosUtils {
                 if (data.has("category")) {
                     categoria = data.getString("category");
                 }
-                list.add(new Market(categoria, cantidad + " CUP"));
+                list.add(new Market(categoria, cantidad + " CUP",""));
             }
         } catch (Exception err) {
             err.printStackTrace();

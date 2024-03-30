@@ -11,8 +11,8 @@ android {
         applicationId = "com.arr.bancamovil"
         minSdk = 23
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.0.3-beta"
+        versionCode = 5
+        versionName = "1.5"
 
         vectorDrawables {
             useSupportLibrary = true

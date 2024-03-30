@@ -82,10 +82,12 @@
 
             <Button
                 android:id="@+id/button_export"
-                android:layout_height="wrap_content"
+                android:layout_height="56sp"
                 android:layout_width="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1.0"
+                android:textColor="@android:color/white"
+                app:cornerRadius="10dp"
                 android:text="Copia de seguridad" />
 
         </LinearLayout>

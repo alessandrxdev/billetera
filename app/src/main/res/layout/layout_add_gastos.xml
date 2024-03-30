@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:id="@+id/title">
+
+        <ImageButton
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:contentDescription="@string/eliminar_content_description"
+            android:src="@drawable/ic_close"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/close" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAppearance="?textAppearanceHeadlineMedium"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="Gastos" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/title"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/content">
+
+        <EditText
+            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="0.00 CUP"
+            android:textAppearance="?textAppearanceHeadlineLarge"
+            android:singleLine="true"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:inputType="numberDecimal"
+            android:id="@+id/cantidad"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_marginTop="20dp"
+            android:scrollIndicators="top">
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:singleSelection="true"
+                android:paddingRight="20dp"
+                app:singleLine="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:id="@+id/chip_group">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:id="@+id/chip_alimentos"
+                    android:text="Alimentos" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:checked="false"
+                    android:id="@+id/chip_transporte"
+                    android:text="Transporte" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:id="@+id/chip_facturas"
+                    android:text="Facturas" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:id="@+id/chip_ocio"
+                    android:text="Ocio" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:id="@+id/chip_ropa"
+                    android:text="Ropa" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:id="@+id/chip_belleza"
+                    android:text="Belleza" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:id="@+id/chip_otros"
+                    android:text="Otros" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+
+        </HorizontalScrollView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Fecha"
+            app:startIconContentDescription="@string/content_description_credit_card_icon"
+            style="@style/M3TextInputLayout"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_calendar_24px"
+            android:id="@+id/fecha">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:imeOptions="actionNext"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:cursorVisible="false"
+                android:singleLine="true"
+                android:focusable="false"
+                android:id="@+id/edit_fecha" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:hint="Descripción"
+            app:startIconContentDescription="@string/content_description_credit_card_icon"
+            style="@style/M3TextInputLayout"
+            android:layout_marginTop="10dp"
+            app:startIconDrawable="@drawable/ic_edit">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_description"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_height="57dp"
+        android:layout_width="wrap_content"
+        app:icon="@drawable/ic_add_24px"
+        app:iconSize="15dp"
+        app:cornerRadius="20dp"
+        app:iconTint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/guardar"
+        android:text="Agregar" />
+
+</RelativeLayout>
